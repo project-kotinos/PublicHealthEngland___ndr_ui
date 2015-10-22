@@ -1,4 +1,4 @@
-# NdrUi
+# NdrUi [![Build Status](https://travis-ci.org/PublicHealthEngland/ndr_ui.svg)](https://travis-ci.org/PublicHealthEngland/ndr_ui)
 
 This is the Public Health England (PHE) National Disease Registration (NDR) User Interface rubygem,
 providing extensions to [Bootstrap](http://getbootstrap.com):
