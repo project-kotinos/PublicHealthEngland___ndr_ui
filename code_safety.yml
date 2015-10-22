@@ -1,0 +1,58 @@
+---
+file safety:
+  ".gitignore":
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3114ac4f6660e540f28bd3e64f9ecc6a6635d4cb
+  ".travis.yml":
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  CODE_OF_CONDUCT.md:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3114ac4f6660e540f28bd3e64f9ecc6a6635d4cb
+  Gemfile:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3114ac4f6660e540f28bd3e64f9ecc6a6635d4cb
+  LICENSE.txt:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3114ac4f6660e540f28bd3e64f9ecc6a6635d4cb
+  README.md:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  Rakefile:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  bin/console:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3114ac4f6660e540f28bd3e64f9ecc6a6635d4cb
+  bin/setup:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3114ac4f6660e540f28bd3e64f9ecc6a6635d4cb
+  lib/ndr_ui.rb:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  lib/ndr_ui/version.rb:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  ndr_ui.gemspec:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  test/ndr_ui_test.rb:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  test/test_helper.rb:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
