@@ -1,6 +1,5 @@
 # coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+$LOAD_PATH.push File.expand_path('../lib', __FILE__)
 require 'ndr_ui/version'
 
 Gem::Specification.new do |spec|
@@ -21,14 +20,11 @@ Gem::Specification.new do |spec|
     fail 'RubyGems 2.0 or newer is required to protect against public gem pushes.'
   end
 
-  spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-  spec.bindir        = 'exe'
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.require_paths = ['lib']
+  spec.files         = Dir['{app,config,db,lib}/**/*', 'LICENSE.txt', 'Rakefile', 'README.md']
+  spec.test_files    = Dir['test/**/*']
 
-  spec.add_development_dependency 'bundler', '~> 1.10'
+  spec.add_dependency 'rails', '~> 4.2.5'
   spec.add_development_dependency 'rake', '~> 10.0'
-  spec.add_development_dependency 'minitest'
   spec.add_development_dependency 'pry'
   spec.add_development_dependency 'ndr_support', '~> 3.0', '>= 3.1.0'
   spec.add_development_dependency 'simplecov'

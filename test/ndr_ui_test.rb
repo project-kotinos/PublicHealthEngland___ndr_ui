@@ -1,11 +1,11 @@
 require 'test_helper'
 
-class NdrUiTest < Minitest::Test
+class NdrUiTest < ActiveSupport::TestCase
   def test_that_it_has_a_version_number
     refute_nil ::NdrUi::VERSION
   end
 
-  def test_it_does_something_useful
-    assert false
+  test 'truth' do
+    assert_kind_of Module, NdrUi
   end
 end
