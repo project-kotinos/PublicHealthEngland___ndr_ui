@@ -7,8 +7,8 @@ Gem::Specification.new do |spec|
   spec.version       = NdrUi::VERSION
   spec.authors       = ['NDR Development Team']
   spec.email         = []
-  spec.summary       = 'TODO: Write a short summary, because Rubygems requires one.'
-  spec.description   = 'TODO: Write a longer description or delete this line.'
+  spec.summary       = 'NDR UI Rails Engine'
+  spec.description   = 'Provides Rails applications with additional support for the Twitter Bootstrap UI framework'
   spec.homepage      = 'https://github.com/PublicHealthEngland/ndr_ui'
   spec.license       = 'MIT'
 
