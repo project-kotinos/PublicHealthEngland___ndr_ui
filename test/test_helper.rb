@@ -20,3 +20,13 @@ if ActiveSupport::TestCase.respond_to?(:fixture_path=)
   ActionDispatch::IntegrationTest.fixture_path = ActiveSupport::TestCase.fixture_path
   ActiveSupport::TestCase.fixtures :all
 end
+
+module ActiveSupport
+  class TestCase
+    def unsafe_string
+      '<script type="text/javascript">alert(\'UNSAFE!\');</script>'
+    end
+  end
+end
+
+require 'mocha/mini_test'

@@ -28,4 +28,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'pry'
   spec.add_development_dependency 'ndr_support', '~> 3.0', '>= 3.1.0'
   spec.add_development_dependency 'simplecov'
+  spec.add_development_dependency 'mocha', '~> 1.1.0'
 end
