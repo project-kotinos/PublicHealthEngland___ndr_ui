@@ -23,6 +23,8 @@ Gem::Specification.new do |spec|
   spec.files         = Dir['{app,config,db,lib}/**/*', 'LICENSE.txt', 'Rakefile', 'README.md']
   spec.test_files    = Dir['test/**/*']
 
+  spec.required_ruby_version = '>= 2.2.0'
+
   spec.add_dependency 'rails', '~> 4.2.5'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'pry'
