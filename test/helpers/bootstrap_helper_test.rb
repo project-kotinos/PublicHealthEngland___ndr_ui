@@ -232,15 +232,13 @@ class BootstrapHelperTest < ActionView::TestCase
         assert_select 'div.modal-footer' do
           assert_select 'button',
                         attributes: { class: 'btn btn-default', "data-dismiss": 'modal' },
-                        html: "Don&#x27;t save"
+                        html: /Don(.*?)t save/ # assert_select behaviour changes
           assert_select 'input', attributes: { type: 'submit', class: 'btn-primary btn' }
         end
       end
     end
 
-    @output_buffer = bootstrap_modal_box('New Pear') do
-      'Pear form'
-    end
+    @output_buffer = bootstrap_modal_box('New Pear') { 'Pear form' }
     assert_select 'div.modal-dialog' do
       assert_select 'div.modal-content' do
         assert_select 'div.modal-header h4', 'New Pear'
@@ -248,9 +246,8 @@ class BootstrapHelperTest < ActionView::TestCase
         assert_select 'div.modal-footer' do
           assert_select 'button',
                         attributes: { class: 'btn btn-default', "data-dismiss": 'modal' },
-                        html: "Don&#x27;t save"
-          assert_select 'input',
-                        attributes: { type: 'submit', class: 'btn-primary btn' }
+                        html: /Don(.*?)t save/ # assert_select behaviour changes
+          assert_select 'input', attributes: { type: 'submit', class: 'btn-primary btn' }
         end
       end
     end
