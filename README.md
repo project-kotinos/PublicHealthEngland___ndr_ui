@@ -3,8 +3,8 @@
 This is the Public Health England (PHE) National Disease Registration (NDR) User Interface rubygem,
 providing extensions to [Bootstrap](http://getbootstrap.com):
 
-1. a Bootstrap based Rails Form Builder
-2. Bootstrap based pagination links
+1. ~~a Bootstrap based Rails Form Builder~~
+2. ~~Bootstrap based pagination links~~
 3. Bootstrap based Rails Helpers
 
 To experiment with the code, run `bin/console` for an interactive prompt.
