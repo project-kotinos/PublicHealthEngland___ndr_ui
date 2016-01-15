@@ -184,7 +184,16 @@ class BootstrapHelperTest < ActionView::TestCase
                      bootstrap_list_link_to('test', inbox_path)
   end
 
-  # TODO: bootstrap_list_badge_and_link_to(type, count, name, path)
+  test 'bootstrap_list_badge_and_link_to' do
+    stubs(:inbox_path).returns('/inbox')
+    stubs(:current_page?).returns(false)
+    refute current_page?(inbox_path)
+
+    html = content_tag(:div, bootstrap_badge_tag(:important, 99), :class => 'pull-right') + 'Inbox'
+    assert_dom_equal "<li>#{link_to(html, inbox_path)}</li>",
+                     bootstrap_list_badge_and_link_to(:important, 99, 'Inbox', inbox_path)
+  end
+
   # TODO: list_group_link_to(*args, &block)
 
   test 'bootstrap_list_divider_tag' do

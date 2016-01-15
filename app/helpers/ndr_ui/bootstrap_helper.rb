@@ -279,7 +279,12 @@ module NdrUi
       end
     end
 
-    # TODO: bootstrap_list_badge_and_link_to(type, count, name, path)
+    # Convenience wrapper for a bootstrap_list_link_to with badge
+    def bootstrap_list_badge_and_link_to(type, count, name, path)
+      html = content_tag(:div, bootstrap_badge_tag(type, count), :class => 'pull-right') + name
+      bootstrap_list_link_to(html, path)
+    end
+
     # TODO: list_group_link_to(*args, &block)
 
     # Creates a Boostrap list divider.
