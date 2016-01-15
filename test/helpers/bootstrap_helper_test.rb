@@ -103,7 +103,11 @@ class BootstrapHelperTest < ActionView::TestCase
            'bootstrap_dropdown_toggle_tag is not html_safe'
   end
 
-  # TODO: bootstrap_icon_tag(type, force_bootstrap = false)
+  test 'bootstrap_icon_tag' do
+    assert_dom_equal '<span class="glyphicon glyphicon-search"></span>', bootstrap_icon_tag(:search)
+    assert bootstrap_icon_tag(:search).html_safe?, 'bootstrap_caret_tag is not html_safe'
+  end
+
   # TODO: bootstrap_icon_spinner(type = :default)
 
   test 'bootstrap_accordion_tag' do

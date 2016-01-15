@@ -144,7 +144,20 @@ module NdrUi
               'data-toggle': 'dropdown')
     end
 
-    # TODO: bootstrap_icon_tag(type, force_bootstrap = false)
+    # Creates a simple bootstrap icon.
+    #
+    # ==== Signatures
+    #
+    #   bootstrap_icon_tag(type)
+    #
+    # ==== Examples
+    #
+    #   <%= bootstrap_icon_tag(:search) %>
+    #   # => <span class="glyphicon glyphicon-search"></span>
+    def bootstrap_icon_tag(type)
+      content_tag(:span, '', :class => "glyphicon glyphicon-#{type.to_s}")
+    end
+
     # TODO: bootstrap_icon_spinner(type = :default)
 
     # Creates an accordion wrapper and creates a new BootstrapAccordion instance
