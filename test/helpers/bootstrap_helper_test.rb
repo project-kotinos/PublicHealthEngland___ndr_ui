@@ -266,6 +266,17 @@ class BootstrapHelperTest < ActionView::TestCase
     end
   end
 
+  test 'bootstrap_modal_box with size' do
+    @output_buffer = bootstrap_modal_box('New Pear', 'Pear form', size: 'lg')
+    assert_select 'div.modal-dialog.modal-lg'
+
+    @output_buffer = bootstrap_modal_box('New Pear', size: 'lg') { 'Pear form' }
+    assert_select 'div.modal-dialog.modal-lg'
+
+    @output_buffer = bootstrap_modal_box('New Pear', 'Pear form', size: 'enormous')
+    assert_select 'div.modal-dialog.modal-enormous', 0
+  end
+
   test 'bootstrap_progressbar_tag' do
     assert_dom_equal '<div class="progress progress-striped active" title="40%">' \
                      '<div class="progress-bar" style="width:40%"></div></div>',

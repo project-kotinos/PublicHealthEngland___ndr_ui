@@ -9,6 +9,8 @@ module NdrUi
       panel-danger
     ) unless defined?(PANEL_SUBCLASSES)
 
+    MODAL_SIZES = %w(sm lg) unless defined?(MODAL_SIZES)
+
     # Creates an alert box of the given +type+. It supports the following alert box types
     # <tt>:alert</tt>, <tt>:danger</tt>, <tt>:info</tt> and <tt>:success</tt>.
     #
@@ -380,6 +382,11 @@ module NdrUi
     #     # controls
     #   end
     #
+    # ==== Options
+    #
+    # * <tt>:size</tt> - Symbol of modal box size. Supported sizes are <tt>:sm</tt>,
+    #   <tt>:lg</tt>. By default it will be unset (medium width).
+    #
     # ==== Examples
     #
     #   <%= bootstrap_modal_box("New Pear", "Pear form") %>
@@ -403,13 +410,9 @@ module NdrUi
     #   </div>
     def bootstrap_modal_box(title, *args, &block)
       return bootstrap_modal_box(title, capture(&block), *args) if block_given?
-      # options = args.extract_options!
-      # options = options.stringify_keys
-      # classes = %w()
-      # classes << options['class'].split(' ') if options.include?('class')
-      # options['class'] = classes.join(' ')
+      options = args.extract_options!
 
-      content_tag(:div, class: 'modal-dialog') do
+      content_tag(:div, class: bootstrap_modal_classes(options)) do
         content_tag(:div, class: 'modal-content') do
           content_tag(:div, content_tag(:h4, title, class: 'modal-title'),
                       class: 'modal-header') +
@@ -423,6 +426,16 @@ module NdrUi
         end
       end
     end
+
+    # Returns the css classes for a bootstrap modal dialog
+    def bootstrap_modal_classes(options)
+      options = options.stringify_keys
+
+      classes = %w(modal-dialog)
+      classes << "modal-#{options['size']}" if MODAL_SIZES.include?(options['size'])
+      classes.join(' ')
+    end
+    private :bootstrap_modal_classes
 
     # Creates a Boostrap progress bar.
     #
