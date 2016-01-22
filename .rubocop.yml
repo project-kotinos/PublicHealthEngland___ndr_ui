@@ -1,6 +1,8 @@
-# By default, would enforce { key: value } rather than { :key => value }.
 AllCops:
-  RunRailsCops: true
+  TargetRubyVersion: 2.3
+
+Rails:
+  Enabled: true
 
 # Multi-line method chaining should be done with trailing dots.
 Style/DotPosition:
