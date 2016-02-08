@@ -19,7 +19,7 @@ load 'rails/tasks/statistics.rake'
 Bundler::GemHelper.install_tasks
 
 require 'rake/testtask'
-require 'ndr_support/tasks'
+require 'ndr_dev_support/tasks'
 
 Rake::TestTask.new(:test) do |t|
   t.libs << 'lib'
