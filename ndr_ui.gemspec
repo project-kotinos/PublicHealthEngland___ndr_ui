@@ -20,8 +20,8 @@ Gem::Specification.new do |spec|
     fail 'RubyGems 2.0 or newer is required to protect against public gem pushes.'
   end
 
-  spec.files         = Dir['{app,config,db,lib}/**/*', 'LICENSE.txt', 'Rakefile', 'README.md']
-  spec.test_files    = Dir['test/**/*']
+  spec.files      = Dir['{app,config,db,lib,vendor}/**/*', 'LICENSE.txt', 'Rakefile', 'README.md']
+  spec.test_files = Dir['test/**/*']
 
   spec.required_ruby_version = '>= 2.2.0'
 
