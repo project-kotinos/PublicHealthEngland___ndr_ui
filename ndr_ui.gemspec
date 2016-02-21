@@ -26,6 +26,8 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = '>= 2.2.0'
 
   spec.add_dependency 'rails', '>= 3.2.18', '< 5.0.0'
+  spec.add_dependency 'sass-rails', '~> 5.0'
+
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'pry'
   spec.add_development_dependency 'ndr_dev_support', '~> 1.1', '>= 1.1.1'
