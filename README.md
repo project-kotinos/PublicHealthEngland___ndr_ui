@@ -1,11 +1,13 @@
 # NdrUi [![Build Status](https://travis-ci.org/PublicHealthEngland/ndr_ui.svg)](https://travis-ci.org/PublicHealthEngland/ndr_ui)
 
 This is the Public Health England (PHE) National Disease Registration (NDR) User Interface rubygem,
-providing extensions to [Bootstrap](http://getbootstrap.com):
+providing:
 
-1. ~~a Bootstrap based Rails Form Builder~~
-2. ~~Bootstrap based pagination links~~
-3. Bootstrap based Rails Helpers
+1. jQuery
+2. [Bootstrap](http://getbootstrap.com)
+3. ~~a Bootstrap based Rails Form Builder~~
+4. ~~Bootstrap based pagination links~~
+5. Bootstrap based Rails Helpers
 
 To experiment with the code, run `bin/console` for an interactive prompt.
 
@@ -27,7 +29,39 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Require NdrUi javascripts at the top of `app/assets/javascripts/application.js`:
+
+```javascript
+//= require ndr_ui
+```
+
+Import NdrUi styles at the top of `app/assets/stylesheets/application.scss`:
+
+```scss
+/*
+*= require ndr_ui
+*/
+```
+
+### Date Picker
+
+To use the date picker, require it after ndr_ui. For example:
+
+In `app/assets/javascripts/application.js`:
+
+```javascript
+//= require ndr_ui
+//= require ndr_ui/datepicker
+```
+
+In `app/assets/stylesheets/application.scss`:
+
+```scss
+/*
+*= require ndr_ui
+*= require ndr_ui/datepicker
+*/
+```
 
 ## Development
 
