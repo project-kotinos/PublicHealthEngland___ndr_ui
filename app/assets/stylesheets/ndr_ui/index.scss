@@ -1,3 +1,11 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+// Fieldsets don't behave properly with Bootstrap in Firefox
+// https://stackoverflow.com/questions/17408815/fieldset-resizes-wrong-appears-to-have-unremovable-min-width-min-content/17863685#17863685
+@-moz-document url-prefix() {
+    fieldset {
+        display: table-cell;
+    }
+}
