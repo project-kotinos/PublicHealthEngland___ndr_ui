@@ -8,6 +8,7 @@ providing:
 3. ~~a Bootstrap based Rails Form Builder~~
 4. ~~Bootstrap based pagination links~~
 5. Bootstrap based Rails Helpers
+6. Bootstrap based date picker
 
 To experiment with the code, run `bin/console` for an interactive prompt.
 
