@@ -157,7 +157,7 @@ module NdrUi
     #   <%= bootstrap_icon_tag(:search) %>
     #   # => <span class="glyphicon glyphicon-search"></span>
     def bootstrap_icon_tag(type)
-      content_tag(:span, '', :class => "glyphicon glyphicon-#{type.to_s}")
+      content_tag(:span, '', class: "glyphicon glyphicon-#{type}")
     end
 
     # TODO: bootstrap_icon_spinner(type = :default)
@@ -283,7 +283,7 @@ module NdrUi
 
     # Convenience wrapper for a bootstrap_list_link_to with badge
     def bootstrap_list_badge_and_link_to(type, count, name, path)
-      html = content_tag(:div, bootstrap_badge_tag(type, count), :class => 'pull-right') + name
+      html = content_tag(:div, bootstrap_badge_tag(type, count), class: 'pull-right') + name
       bootstrap_list_link_to(html, path)
     end
 
@@ -419,9 +419,9 @@ module NdrUi
             content_tag(:div, args.first, class: 'modal-body') +
             content_tag(:div, class: 'modal-footer') do
               button_tag("Don't save", class: 'btn btn-default', "data-dismiss": 'modal') +
-                submit_tag('Save',
-                           class: 'btn-primary',
-                           disable_with: 'Saving&hellip;'.html_safe)
+              submit_tag('Save',
+                         class: 'btn-primary',
+                         disable_with: 'Saving&hellip;'.html_safe)
             end
         end
       end
@@ -476,7 +476,7 @@ module NdrUi
 
       inner = content_tag(:div, '', class: "progress-bar#{type}", style: "width:#{percentage}%")
 
-      options.merge!('class' => classes.compact.join(' '))
+      options['class'] = classes.compact.join(' ')
       content_tag(:div, inner, options)
     end
 

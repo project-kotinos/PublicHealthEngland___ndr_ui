@@ -5,6 +5,6 @@ module NdrUi
   class Engine < ::Rails::Engine
     isolate_namespace NdrUi
 
-    config.assets.paths << File.expand_path("../../../vendor/assets", __FILE__)
+    config.assets.paths << File.expand_path('../../../vendor/assets', __FILE__)
   end
 end

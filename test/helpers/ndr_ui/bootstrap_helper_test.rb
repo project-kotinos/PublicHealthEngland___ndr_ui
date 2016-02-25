@@ -56,7 +56,9 @@ module NdrUi
                        bootstrap_alert_tag(:danger) {}
 
       assert_dom_equal '<div id="pear_123" class="alert alert-warning">Pears</div>',
-                       bootstrap_alert_tag(:warning, dismissible: false, id: 'pear_123') { 'Pears' }
+                       bootstrap_alert_tag(:warning, dismissible: false, id: 'pear_123') {
+                         'Pears'
+                       }
 
       html = bootstrap_alert_tag(:info, id: 'pear_123') { unsafe_string }
       assert html.html_safe?, 'bootstrap_alert_tag is not html_safe'
@@ -104,7 +106,8 @@ module NdrUi
     end
 
     test 'bootstrap_icon_tag' do
-      assert_dom_equal '<span class="glyphicon glyphicon-search"></span>', bootstrap_icon_tag(:search)
+      assert_dom_equal '<span class="glyphicon glyphicon-search"></span>',
+                       bootstrap_icon_tag(:search)
       assert bootstrap_icon_tag(:search).html_safe?, 'bootstrap_caret_tag is not html_safe'
     end
 
@@ -127,8 +130,8 @@ module NdrUi
                        '<div class="panel-body">This is an apple.</div></div></div>' \
                        '<div class="panel panel-default"><div class="panel-heading">' \
                        '<h4 class="panel-title">' \
-                       '<a href="#fruit_2" data-parent="#fruit" data-toggle="collapse">Orange</a>' \
-                       '</h4></div><div class="panel-collapse collapse in" id="fruit_2">' \
+                       '<a href="#fruit_2" data-parent="#fruit" data-toggle="collapse">Orange' \
+                       '</a></h4></div><div class="panel-collapse collapse in" id="fruit_2">' \
                        '<div class="panel-body">This is an orange.</div></div></div></div>',
                        html
     end
@@ -141,8 +144,8 @@ module NdrUi
       end
       assert_dom_equal '<div id="fruit" class="panel-group"><div class="panel panel-default">' \
                        '<div class="panel-heading"><h4 class="panel-title">' \
-                       '<a href="#fruit_1" data-parent="#fruit" data-toggle="collapse">Apple</a>' \
-                       '</h4></div><div class="panel-collapse collapse" id="fruit_1">' \
+                       '<a href="#fruit_1" data-parent="#fruit" data-toggle="collapse">Apple' \
+                       '</a></h4></div><div class="panel-collapse collapse" id="fruit_1">' \
                        'This is an apple.</div></div></div>',
                        html
     end
@@ -189,7 +192,7 @@ module NdrUi
       stubs(:current_page?).returns(false)
       refute current_page?(inbox_path)
 
-      html = content_tag(:div, bootstrap_badge_tag(:important, 99), :class => 'pull-right') + 'Inbox'
+      html = content_tag(:div, bootstrap_badge_tag(:important, 99), class: 'pull-right') + 'Inbox'
       assert_dom_equal "<li>#{link_to(html, inbox_path)}</li>",
                        bootstrap_list_badge_and_link_to(:important, 99, 'Inbox', inbox_path)
     end
