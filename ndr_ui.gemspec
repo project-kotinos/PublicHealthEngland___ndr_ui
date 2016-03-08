@@ -30,6 +30,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'sass-rails', '>= 3.2'
   spec.add_dependency 'jquery-rails', '~> 4.1.0'
 
+  spec.add_development_dependency 'sqlite3'
+
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'pry'
   spec.add_development_dependency 'ndr_dev_support', '~> 1.1', '>= 1.1.1'
