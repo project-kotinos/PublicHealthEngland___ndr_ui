@@ -1,4 +1,5 @@
 module NdrUi
+  # Provides helper methods for the Twitter Bootstrap framework
   module BootstrapHelper
     PANEL_SUBCLASSES = %w(
       panel-default
@@ -337,7 +338,32 @@ module NdrUi
                   class: (name == name.upcase ? 'initialism' : nil))
     end
 
-    # TODO: bootstrap_form_for(record_or_name_or_array, *args, &proc)
+    # Identical signature to form_for, but uses NdrUi::BootstrapBuilder.
+    # See ActionView::Helpers::FormHelper for details
+    def bootstrap_form_for(record_or_name_or_array, *args, &proc)
+      options = args.extract_options!
+      options[:html] ||= {}
+
+      # :horizontal
+      if horizontal = options.delete(:horizontal)
+        # set the form html class for horizontal bootstrap forms
+        options[:html][:class] ||= ''
+        options[:html][:class] = (options[:html][:class].split(' ') << 'form-horizontal').uniq.join(' ')
+      end
+
+      # We switch autocomplete off by default
+      raise 'autocomplete should be defined an html option' if options[:autocomplete]
+      options[:html][:autocomplete] ||= 'off'
+
+      form_for(record_or_name_or_array, *(args << options.merge(builder: NdrUi::BootstrapBuilder))) do |form|
+        # Put the form builder into horizontal mode (if necessary)
+        form.horizontal_mode = horizontal if horizontal
+
+        # yield to the provided form block
+        yield(form)
+      end
+    end
+
     # TODO: bootstrap_pagination_tag(*args, &block)
 
     # Creates a Boostrap control group for button.

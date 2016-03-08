@@ -218,7 +218,43 @@ module NdrUi
                        bootstrap_abbreviation_tag('abbr', 'Abbreviation')
     end
 
-    # TODO: bootstrap_form_for(record_or_name_or_array, *args, &proc)
+    test 'bootstrap_form_for' do
+      @output_buffer = bootstrap_form_for(
+        :post,
+        url: posts_path,
+        html: { id: 'preserve_me' }
+      ) do |form|
+        assert_kind_of BootstrapBuilder, form
+      end
+      assert_select 'form#preserve_me[autocomplete=off][action="/posts"]'
+
+      @output_buffer = bootstrap_form_for(
+        :post,
+        url: posts_path,
+        html: { id: 'preserve_me', class: 'form-inline' }
+      ) do |form|
+        assert_kind_of BootstrapBuilder, form
+      end
+      assert_select 'form#preserve_me.form-inline[autocomplete=off][action="/posts"]'
+
+      @output_buffer = bootstrap_form_for(
+        :post,
+        url: posts_path,
+        horizontal: true, html: { id: 'preserve_me' }
+      ) do |form|
+        assert_kind_of BootstrapBuilder, form
+      end
+      assert_select 'form#preserve_me.form-horizontal[autocomplete=off][action="/posts"]'
+    end
+
+    test 'bootstrap_form_for invalid autocomplete option' do
+      assert_raise RuntimeError do
+        bootstrap_form_for(:post, url: posts_path, autocomplete: 'on') do |form|
+          assert_kind_of BootstrapBuilder, form
+        end
+      end
+    end
+
     # TODO: bootstrap_pagination_tag(*args, &block)
 
     test 'button_control_group' do

@@ -5,7 +5,7 @@ providing:
 
 1. jQuery
 2. [Bootstrap](http://getbootstrap.com)
-3. ~~a Bootstrap based Rails Form Builder~~
+3. a Bootstrap based Rails Form Builder
 4. ~~Bootstrap based pagination links~~
 5. Bootstrap based Rails Helpers
 6. Bootstrap based date picker
