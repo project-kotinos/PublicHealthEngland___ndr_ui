@@ -17,6 +17,9 @@ Lambda:
 # ...
 LineLength:
   Max: 99
+  Exclude:
+    - bin/*
+    - test/dummy/**/*.rb
 
 # Relax some of the cops for tests
 Metrics/ClassLength: &exclude_tests
