@@ -13,6 +13,17 @@ module NdrUi
       end
     end
 
+    test 'add_form_control_class text_area' do
+      post = Post.new
+
+      @output_buffer =
+        bootstrap_form_for post do |form|
+          form.text_area :updated_at
+        end
+
+      assert_select 'textarea.form-control'
+    end
+
     test 'control_group' do
       post = Post.new
       bootstrap_form_for post do |form|
@@ -30,6 +41,7 @@ module NdrUi
           'Pears'
         end
         assert_dom_equal '<div class="form-group"><label for="post_created_at" class="control-label">Created at</label><div>Pears</div></div>', html
+
         html = form.control_group(:created_at, 'Created at', class: 'col-md-2') do
           'Pears'
         end

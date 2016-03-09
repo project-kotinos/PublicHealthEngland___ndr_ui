@@ -1,6 +1,10 @@
+require_relative 'bootstrap/form_control_class'
+
 module NdrUi
   # Our Bootstrp FormBuilder subclass
   class BootstrapBuilder < ActionView::Helpers::FormBuilder
+    include Bootstrap::FormControlClass
+
     attr_accessor :horizontal_mode
 
     # Creates a bootstrap control group with label tag for the specified method (and has a direct
