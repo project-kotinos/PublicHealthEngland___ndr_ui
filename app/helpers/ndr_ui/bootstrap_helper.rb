@@ -1,11 +1,13 @@
+require_relative 'bootstrap/dropdown_helper'
+require_relative 'bootstrap/modal_helper'
 require_relative 'bootstrap/panel_helper'
 
 module NdrUi
   # Provides helper methods for the Twitter Bootstrap framework
   module BootstrapHelper
+    include ::NdrUi::Bootstrap::DropdownHelper
+    include ::NdrUi::Bootstrap::ModalHelper
     include ::NdrUi::Bootstrap::PanelHelper
-
-    MODAL_SIZES = %w(sm lg) unless defined?(MODAL_SIZES)
 
     # Creates an alert box of the given +type+. It supports the following alert box types
     # <tt>:alert</tt>, <tt>:danger</tt>, <tt>:info</tt> and <tt>:success</tt>.
@@ -174,37 +176,6 @@ module NdrUi
                   active ? { class: 'active' } : {})
     end
 
-    # Creates an html list item containing a link. It takes the standard link_to arguments
-    # passing them through to a standard link_to call. For bootstrap styling, it simply adds the
-    # class "active", if the link points to the current page that is being viewed.
-    # Predominantly used by nav bars and lists.
-    #
-    # ==== Signatures
-    #
-    #   bootstrap_list_link_to(name, options = {}, html_options = nil)
-    #   bootstrap_list_link_to(options = {}, html_options = nil) do
-    #     # name
-    #   end
-    #
-    # See the Rails documentation for details of the options and examples
-    #
-    def bootstrap_list_link_to(*args, &block)
-      if block_given?
-        options      = args.first || {}
-        html_options = args.second
-        return bootstrap_list_link_to(capture(&block), options, html_options)
-      else
-        name         = args.first
-        options      = args.second || {}
-        html_options = args.third
-
-        li_options = {}
-        li_options[:class] = 'active' if current_page?(options)
-
-        content_tag(:li, link_to(name, options, html_options), li_options)
-      end
-    end
-
     # Convenience wrapper for a bootstrap_list_link_to with badge
     def bootstrap_list_badge_and_link_to(type, count, name, path)
       html = content_tag(:div, bootstrap_badge_tag(type, count), class: 'pull-right') + name
@@ -212,36 +183,6 @@ module NdrUi
     end
 
     # TODO: list_group_link_to(*args, &block)
-
-    # Creates a Boostrap list divider.
-    #
-    # ==== Signatures
-    #
-    #   bootstrap_list_divider_tag
-    #
-    # ==== Examples
-    #
-    #   <%= bootstrap_list_divider_tag %>
-    #   # => <li class="divider"></li>
-    def bootstrap_list_divider_tag(options = {})
-      options[:class] = (options[:class].to_s.split(' ') + ['divider']).join(' ')
-      content_tag(:li, '', { role: 'presentation' }.merge(options))
-    end
-
-    # Creates a Boostrap list header.
-    #
-    # ==== Signatures
-    #
-    #   bootstrap_list_header_tag(name)
-    #
-    # ==== Examples
-    #
-    #   <%= bootstrap_list_header_tag("Apples") %>
-    #   # => <li class="dropdown-header">Apples</li>
-    def bootstrap_list_header_tag(name, options = {})
-      options[:class] = (options[:class].to_s.split(' ') + ['dropdown-header']).join(' ')
-      content_tag(:li, name, { role: 'presentation' }.merge(options))
-    end
 
     # Creates a Boostrap abbreviation tag (note: the acronym tag is not valid HTML5).
     # Also adds the "initialism" class if the abbreviation is all upper case.
@@ -321,70 +262,6 @@ module NdrUi
         end
       end
     end
-
-    # Creates a Boostrap Modal box.
-    #
-    # ==== Signatures
-    #
-    #   bootstrap_modal_box(title, controls, options = {})
-    #   bootstrap_modal_box(title, options = {}) do
-    #     # controls
-    #   end
-    #
-    # ==== Options
-    #
-    # * <tt>:size</tt> - Symbol of modal box size. Supported sizes are <tt>:sm</tt>,
-    #   <tt>:lg</tt>. By default it will be unset (medium width).
-    #
-    # ==== Examples
-    #
-    #   <%= bootstrap_modal_box("New Pear", "Pear form") %>
-    #   # =>
-    #   <div class="modal-dialog">
-    #     <div class="modal-content">
-    #       <div class="modal-header">
-    #         <h4 class="modal-title">New Pear</h4>
-    #       </div>
-    #       <div class="modal-body">
-    #         Pear form
-    #       </div>
-    #       <div class="modal-footer">
-    #         <button type="button" class="btn btn-default" data-dismiss="modal">
-    #           Don't save
-    #         </button>
-    #         <input name="commit" class="btn-primary btn" data-disable-with="Saving&hellip;"
-    #   value="Save" type="submit" />
-    #       </div>
-    #     </div>
-    #   </div>
-    def bootstrap_modal_box(title, *args, &block)
-      return bootstrap_modal_box(title, capture(&block), *args) if block_given?
-      options = args.extract_options!
-
-      content_tag(:div, class: bootstrap_modal_classes(options)) do
-        content_tag(:div, class: 'modal-content') do
-          content_tag(:div, content_tag(:h4, title, class: 'modal-title'),
-                      class: 'modal-header') +
-            content_tag(:div, args.first, class: 'modal-body') +
-            content_tag(:div, class: 'modal-footer') do
-              button_tag("Don't save", class: 'btn btn-default', "data-dismiss": 'modal') +
-              submit_tag('Save',
-                         class: 'btn-primary',
-                         disable_with: 'Saving&hellip;'.html_safe)
-            end
-        end
-      end
-    end
-
-    # Returns the css classes for a bootstrap modal dialog
-    def bootstrap_modal_classes(options)
-      options = options.stringify_keys
-
-      classes = %w(modal-dialog)
-      classes << "modal-#{options['size']}" if MODAL_SIZES.include?(options['size'])
-      classes.join(' ')
-    end
-    private :bootstrap_modal_classes
 
     # Creates a Boostrap progress bar.
     #

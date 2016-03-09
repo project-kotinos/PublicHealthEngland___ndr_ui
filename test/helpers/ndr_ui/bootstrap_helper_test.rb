@@ -122,18 +122,6 @@ module NdrUi
                        bootstrap_tab_nav_tag('Fruits', '#fruits', true)
     end
 
-    test 'bootstrap_list_link_to' do
-      stubs(:inbox_path).returns('/inbox')
-      stubs(:current_page?).returns(false)
-      refute current_page?(inbox_path)
-      assert_dom_equal "<li>#{link_to('test', inbox_path)}</li>",
-                       bootstrap_list_link_to('test', inbox_path)
-      stubs(:current_page?).returns(true)
-      assert current_page?(inbox_path)
-      assert_dom_equal "<li class=\"active\">#{link_to('test', inbox_path)}</li>",
-                       bootstrap_list_link_to('test', inbox_path)
-    end
-
     test 'bootstrap_list_badge_and_link_to' do
       stubs(:inbox_path).returns('/inbox')
       stubs(:current_page?).returns(false)
@@ -145,18 +133,6 @@ module NdrUi
     end
 
     # TODO: list_group_link_to(*args, &block)
-
-    test 'bootstrap_list_divider_tag' do
-      assert_dom_equal '<li class="divider" role="presentation"></li>', bootstrap_list_divider_tag
-      assert bootstrap_list_divider_tag.html_safe?, 'bootstrap_list_divider_tag is not html_safe'
-    end
-
-    test 'bootstrap_list_header_tag' do
-      assert_dom_equal '<li class="dropdown-header" role="presentation">Apples</li>',
-                       bootstrap_list_header_tag('Apples')
-      assert bootstrap_list_header_tag(unsafe_string).html_safe?,
-             'bootstrap_list_header_tag is not html_safe'
-    end
 
     test 'bootstrap_abbreviation_tag' do
       assert_dom_equal '<abbr title="Nottingham Prognostic Index" class="initialism">NPI</abbr>',
@@ -220,47 +196,6 @@ module NdrUi
         'Pears'
       end
       assert_dom_equal '<div class="form-group some_class">Pears</div>', html
-    end
-
-    test 'bootstrap_modal_box' do
-      @output_buffer = bootstrap_modal_box('New Pear', 'Pear form')
-      assert_select 'div.modal-dialog' do
-        assert_select 'div.modal-content' do
-          assert_select 'div.modal-header h4', 'New Pear'
-          assert_select 'div.modal-body', 'Pear form'
-          assert_select 'div.modal-footer' do
-            assert_select 'button',
-                          attributes: { class: 'btn btn-default', "data-dismiss": 'modal' },
-                          html: /Don(.*?)t save/ # assert_select behaviour changes
-            assert_select 'input', attributes: { type: 'submit', class: 'btn-primary btn' }
-          end
-        end
-      end
-
-      @output_buffer = bootstrap_modal_box('New Pear') { 'Pear form' }
-      assert_select 'div.modal-dialog' do
-        assert_select 'div.modal-content' do
-          assert_select 'div.modal-header h4', 'New Pear'
-          assert_select 'div.modal-body', 'Pear form'
-          assert_select 'div.modal-footer' do
-            assert_select 'button',
-                          attributes: { class: 'btn btn-default', "data-dismiss": 'modal' },
-                          html: /Don(.*?)t save/ # assert_select behaviour changes
-            assert_select 'input', attributes: { type: 'submit', class: 'btn-primary btn' }
-          end
-        end
-      end
-    end
-
-    test 'bootstrap_modal_box with size' do
-      @output_buffer = bootstrap_modal_box('New Pear', 'Pear form', size: 'lg')
-      assert_select 'div.modal-dialog.modal-lg'
-
-      @output_buffer = bootstrap_modal_box('New Pear', size: 'lg') { 'Pear form' }
-      assert_select 'div.modal-dialog.modal-lg'
-
-      @output_buffer = bootstrap_modal_box('New Pear', 'Pear form', size: 'enormous')
-      assert_select 'div.modal-dialog.modal-enormous', 0
     end
 
     test 'bootstrap_progressbar_tag' do

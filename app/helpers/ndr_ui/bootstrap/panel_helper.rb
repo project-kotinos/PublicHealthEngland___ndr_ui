@@ -11,7 +11,7 @@ module NdrUi
         panel-info
         panel-warning
         panel-danger
-      ) unless defined?(PANEL_SUBCLASSES)
+      ).freeze
 
       # Creates an accordion wrapper and creates a new NdrUi::Bootstrap::Accordion instance
       # Creates an plain or nested bootstrap accordion along with bootstrap_accordion_group
