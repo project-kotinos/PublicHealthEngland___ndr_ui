@@ -44,6 +44,16 @@ Import NdrUi styles at the top of `app/assets/stylesheets/application.scss`:
 */
 ```
 
+Require NdrUi::BootstrapHelper near the top of `app/controllers/application_controller.rb`:
+
+```ruby
+class ApplicationController < ActionController::Base
+  ...
+
+  helper NdrUi::BootstrapHelper
+end
+```
+
 ### Date Picker
 
 To use the date picker, require it after ndr_ui. For example:
