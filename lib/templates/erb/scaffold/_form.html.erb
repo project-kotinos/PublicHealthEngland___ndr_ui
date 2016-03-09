@@ -1,0 +1,32 @@
+<%# Original version taken from railties-4.2.5.1/lib/rails/generators/erb/scaffold/templates %>
+<%%= bootstrap_form_for(@<%= singular_table_name %>, horizontal: true) do |f| %>
+  <%% if @<%= singular_table_name %>.errors.any? %>
+    <div id="error_explanation">
+      <h2><%%= pluralize(@<%= singular_table_name %>.errors.count, "error") %> prohibited this <%= singular_table_name %> from being saved:</h2>
+
+      <ul>
+      <%% @<%= singular_table_name %>.errors.full_messages.each do |message| %>
+        <li><%%= message %></li>
+      <%% end %>
+      </ul>
+    </div>
+  <%% end %>
+
+<% attributes.each do |attribute| -%>
+<% if attribute.password_digest? -%>
+  <%%= f.control_group :password, 'Password' do %>
+    <%%= f.password_field :password %>
+  <%% end %>
+  <%%= f.control_group :password_confirmation, 'Password confirmation' do %>
+    <%%= f.password_field :password_confirmation %>
+  <%% end %>
+<% else -%>
+  <%%= f.control_group :<%= attribute.column_name %>, '<%= attribute.column_name.humanize %>' do %>
+    <%%= f.<%= attribute.field_type %> :<%= attribute.column_name %> %>
+  <%% end %>
+<% end -%>
+<% end -%>
+  <div class="actions">
+    <%%= f.submit %>
+  </div>
+<%% end %>
