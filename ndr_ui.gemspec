@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = '>= 2.2.0'
 
-  spec.add_dependency 'rails', '>= 4.0.0', '< 5.0.0'
+  spec.add_dependency 'rails', '>= 4.2', '< 5.1'
   spec.add_dependency 'bootstrap-sass', '~> 3.3.6'
   spec.add_dependency 'sass-rails', '>= 3.2'
   spec.add_dependency 'jquery-rails', '~> 4.1.0'

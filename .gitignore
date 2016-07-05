@@ -1,7 +1,8 @@
 /.bundle/
+/coverage/
+/gemfiles/*.lock
 /Gemfile.lock
 /log/*.log
-/coverage/
 /pkg/
 /test/dummy/db/*.sqlite3
 /test/dummy/db/*.sqlite3-journal

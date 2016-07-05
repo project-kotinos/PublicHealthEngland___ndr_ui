@@ -1,8 +1,12 @@
 language: ruby
 
+gemfile:
+  - gemfiles/Gemfile.rails42
+  - gemfiles/Gemfile.rails50
+
 rvm:
-  - 2.2
-  - 2.3.0
+  - 2.2.5
+  - 2.3.1
 
 sudo: false
 
@@ -11,6 +15,6 @@ cache: bundler
 before_script: "bundle update"
 
 script:
-  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - rm -f test/dummy/db/test.sqlite3 # Rails 4->5 issue
   - bundle exec rake test
   - bundle exec rubocop .
