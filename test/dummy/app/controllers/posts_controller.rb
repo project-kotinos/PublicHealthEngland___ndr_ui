@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
   def index
-    render text: 'Posts#index'
+    render plain: 'Posts#index'
   end
 end
