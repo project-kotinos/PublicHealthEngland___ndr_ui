@@ -1,6 +1,8 @@
 AllCops:
   Exclude:
+    - gemfiles/vendor/**/*
     - test/dummy/db/schema.rb
+    - vendor/**/*
   TargetRubyVersion: 2.3
 
 Rails:
