@@ -363,12 +363,107 @@ module NdrUi
         content_tag(:dd, value || content_tag(:span, blank_value_placeholder, class: 'text-muted'))
     end
 
-    # TODO: button_toolbar(&block)
-    # TODO: button_group(&block)
-    # TODO: details_link(path, options = {})
-    # TODO: edit_link(path, options = {})
-    # TODO: delete_link(path, options = {})
-    # TODO: link_to_with_icon(options = {})
+    # Creates a Boostrap button toolbar.
+    #
+    # ==== Signatures
+    #
+    #   button_toolbar(&block)
+    #
+    # ==== Examples
+    #
+    #   <%= button_toolbar { link_to('Hello World', '#') } %>
+    #   # => <div class="btn-toolbar"><a href="#">Hello World</a></div>
+    #
+    def button_toolbar(&block)
+      content_tag(:div, capture(&block), class: 'btn-toolbar')
+    end
+
+    # Creates a Boostrap button group.
+    #
+    # ==== Signatures
+    #
+    #   button_group(&block)
+    #
+    # ==== Examples
+    #
+    #   <%= button_group { link_to('Hello World', '#') } %>
+    #   # => <div class="btn-group"><a href="#">Hello World</a></div>
+    #
+    def button_group(&block)
+      content_tag(:div, capture(&block), class: 'btn-group')
+    end
+
+    # Creates a Boostrap 'Details' link.
+    #
+    # ==== Signatures
+    #
+    #   details_link(path, options = {})
+    #
+    # ==== Examples
+    #
+    #   <%= details_link('#') %>
+    #   # => <a title="Details" class="btn btn-default btn-xs" href="#">
+    #          <span class="glyphicon glyphicon-share-alt"></span>
+    #        </a>
+    #
+    def details_link(path, options = {})
+      link_to_with_icon({ icon: 'share-alt', title: 'Details', path: path }.merge(options))
+    end
+
+    # Creates a Boostrap 'Edit' link.
+    #
+    # ==== Signatures
+    #
+    #   edit_link(path, options = {})
+    #
+    # ==== Examples
+    #
+    #   <%= edit_link(#) %>
+    #   # => <a title="Edit" class="btn btn-default btn-xs" href="#">
+    #          <span class="glyphicon glyphicon-pencil"></span>
+    #        </a>
+    #
+    def edit_link(path, options = {})
+      link_to_with_icon({ icon: 'pencil', title: 'Edit', path: path }.merge(options))
+    end
+
+    # Creates a Boostrap 'Delete' link.
+    #
+    # ==== Signatures
+    #
+    #   delete_link(path, options = {})
+    #
+    # ==== Examples
+    #
+    #   <%= delete_link('#') %>
+    #   # => <a title="Delete" class="btn btn-xs btn-danger" rel="nofollow"
+    #           data-method="delete" href="#">
+    #          <span class="glyphicon glyphicon-trash icon-white"></span>
+    #        </a>'
+    def delete_link(path, options = {})
+      link_to_with_icon({ icon: 'trash icon-white', title: 'Delete', path: path,
+                          class: 'btn btn-xs btn-danger', method: :delete }.merge(options))
+    end
+
+    # Creates a Boostrap link with icon.
+    #
+    # ==== Signatures
+    #
+    #   link_to_with_icon(options)
+    #
+    # ==== Examples
+    #
+    #   <%= link_to_with_icon( { icon: 'trash icon-white', title: 'Delete', path: '#' } ) %>
+    #   # => <a title="Delete" class="btn btn-default btn-xs" href="#">
+    #          <span class="glyphicon glyphicon-trash icon-white"></span>
+    #        </a>'
+    def link_to_with_icon(options = {})
+      options[:class] ||= 'btn btn-default btn-xs'
+      icon = bootstrap_icon_tag(options.delete(:icon))
+      content = options.delete(:text) ? icon + ' ' + options[:title] : icon
+      link_to content, options.delete(:path), options
+    end
+
     # TODO: bootstrap_will_paginate(collection = nil, options = {})
   end
 end

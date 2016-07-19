@@ -249,12 +249,51 @@ module NdrUi
                        description_list_name_value_pair('Pear', nil, '[none]')
     end
 
-    # TODO: button_toolbar(&block)
-    # TODO: button_group(&block)
-    # TODO: details_link(path, options = {})
-    # TODO: edit_link(path, options = {})
-    # TODO: delete_link(path, options = {})
-    # TODO: link_to_with_icon(options = {})
+    test 'bootstrap_button_toolbar' do
+      actual = button_toolbar do
+        link_to('Hello World', '#')
+      end
+      expected = '<div class="btn-toolbar"><a href="#">Hello World</a></div>'
+      assert_dom_equal expected, actual
+    end
+
+    test 'bootstrap_button_group' do
+      actual = button_group do
+        link_to('Hello World', '#')
+      end
+      expected = '<div class="btn-group"><a href="#">Hello World</a></div>'
+      assert_dom_equal expected, actual
+    end
+
+    test 'bootstrap_details_link' do
+      actual = details_link('#')
+      expected = '<a title="Details" class="btn btn-default btn-xs" href="#">' \
+                 '<span class="glyphicon glyphicon-share-alt"></span></a>'
+      assert_dom_equal expected, actual
+    end
+
+    test 'bootstrap_edit_link' do
+      actual = edit_link('#')
+      expected = '<a title="Edit" class="btn btn-default btn-xs" href="#">' \
+                 '<span class="glyphicon glyphicon-pencil"></span></a>'
+      assert_dom_equal expected, actual
+    end
+
+    test 'bootstrap_delete_link' do
+      actual = delete_link('#')
+      expected = '<a title="Delete" class="btn btn-xs btn-danger" rel="nofollow"' \
+                 ' data-method="delete" href="#">' \
+                 '<span class="glyphicon glyphicon-trash icon-white"></span></a>'
+      assert_dom_equal expected, actual
+    end
+
+    test 'bootstrap_link_to_with_icon' do
+      actual = link_to_with_icon(icon: 'trash icon-white', title: 'Delete', path: '#')
+      expected = '<a title="Delete" class="btn btn-default btn-xs" href="#">' \
+                 '<span class="glyphicon glyphicon-trash icon-white"></span></a>'
+      assert_dom_equal expected, actual
+    end
+
     # TODO: bootstrap_will_paginate(collection = nil, options = {})
   end
 end
