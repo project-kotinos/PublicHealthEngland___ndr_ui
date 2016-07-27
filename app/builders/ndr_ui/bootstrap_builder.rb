@@ -88,12 +88,6 @@ module NdrUi
       horizontal_mode === true ? 3 : horizontal_mode
     end
 
-    def object
-      # SECURE: BNS 2009-10-01: instance_variable_get limits scope.
-      @object ||= @template.instance_variable_get("@#{@object_name.to_s.gsub(/[\[\]]+/, '')}")
-    end
-    protected :object
-
     # This method merges the specified css_classes into the options hash
     def css_class_options_merge(options, css_classes = [], &block)
       options.symbolize_keys!
