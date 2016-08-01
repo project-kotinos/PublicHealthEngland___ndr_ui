@@ -15,6 +15,5 @@ cache: bundler
 before_script: "bundle update"
 
 script:
-  - rm -f test/dummy/db/test.sqlite3 # Rails 4->5 issue
   - bundle exec rake test
-  - bundle exec rubocop .
+  # - bundle exec rubocop .
