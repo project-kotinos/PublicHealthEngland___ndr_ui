@@ -5,6 +5,21 @@ require_relative 'bootstrap/inline_errors_and_warnings'
 module NdrUi
   # Our Bootstrp FormBuilder subclass
   class BootstrapBuilder < ActionView::Helpers::FormBuilder
+    # FormBuilder defines `field_helpers`, but it is not an exhaustive
+    # list; here, add any others that we may want to be aware of.
+    def self.all_known_field_helpers
+      field_helpers | field_helpers_from_form_options_helper | field_helpers_from_date_helper
+    end
+
+    def self.field_helpers_from_form_options_helper
+      [:select, :collection_select, :grouped_collection_select,
+       :time_zone_select, :collection_check_boxes, :collection_radio_buttons]
+    end
+
+    def self.field_helpers_from_date_helper
+      [:date_select, :time_select, :datetime_select]
+    end
+
     include Bootstrap::FormControlClass
     include Bootstrap::Readonly
     include Bootstrap::InlineErrorsAndWarnings

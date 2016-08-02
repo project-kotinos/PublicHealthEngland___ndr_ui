@@ -21,7 +21,7 @@ module NdrUi
       def self.included(base)
         excluded = [:label, :fields_for, :hidden_field]
 
-        (base.field_helpers - excluded).each do |selector|
+        (base.all_known_field_helpers - excluded).each do |selector|
           class_eval <<-END, __FILE__, __LINE__ + 1
             def #{selector}(method, *)
               super + inline_errors_and_warnings(method)
