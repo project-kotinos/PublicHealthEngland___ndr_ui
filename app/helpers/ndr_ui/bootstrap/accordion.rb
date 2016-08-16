@@ -1,6 +1,7 @@
 module NdrUi
   module Bootstrap
-    # Creates a plain or nested bootstrap accordion along with bootstrap_accordion_tag helper method.
+    # Creates a plain or nested bootstrap accordion along with bootstrap_accordion_tag helper
+    # method.
     # Produce the inner html code of an accordion item.
     # Legacy styling recognised by jQuery UI and only fully supports one level accordion.
     #
@@ -66,25 +67,35 @@ module NdrUi
       def bootstrap_accordion_group(heading, options = {}, &block)
         return unless block_given?
         options.stringify_keys!
-        open     = !!options['open']
-        seamless = !!options['seamless']
+        seamless = options['seamless']
         @index += 1
         content = @template.capture(&block)
-        group_id = "#{@dom_id}_#{@index}"
         content = @template.content_tag('div', content, class: 'panel-body') unless seamless
         @template.content_tag('div', class: 'panel panel-default') do
-          inner_html = @template.content_tag('div', class: 'panel-heading') do
-            @template.content_tag('h4', class: 'panel-title') do
-              @template.link_to(heading,
-                                "##{group_id}",
-                                'data-toggle': 'collapse', 'data-parent': "##{@dom_id}")
-            end
-          end
-          inner_html += @template.content_tag('div', content,
-                                              id: group_id,
-                                              class: "panel-collapse collapse#{' in' if open}")
-          inner_html
+          div_panel_heading(heading) + div_panel_collapse(content, options['open'])
         end
+      end
+
+      private
+
+      def group_id
+        "#{@dom_id}_#{@index}"
+      end
+
+      def div_panel_heading(heading)
+        @template.content_tag('div', class: 'panel-heading') do
+          @template.content_tag('h4', class: 'panel-title') do
+            @template.link_to(heading,
+                              "##{group_id}",
+                              'data-toggle': 'collapse', 'data-parent': "##{@dom_id}")
+          end
+        end
+      end
+
+      def div_panel_collapse(content, open_by_default)
+        @template.content_tag('div', content,
+                              id: group_id,
+                              class: "panel-collapse collapse#{' in' if open_by_default}")
       end
     end
   end
