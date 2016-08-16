@@ -74,6 +74,28 @@ In `app/assets/stylesheets/application.scss`:
 */
 ```
 
+### Timeago
+
+To use the Timeago jQuery plugin and helper method:
+
+Require it after ndr_ui at the top of `app/assets/javascripts/application.js`:
+
+```javascript
+//= require ndr_ui
+//= require ndr_ui/timeago
+```
+
+Require NdrUi::TimeagoHelper near the top of `app/controllers/application_controller.rb`:
+
+```ruby
+class ApplicationController < ActionController::Base
+  ...
+
+  helper NdrUi::BootstrapHelper
+  helper NdrUi::TimeagoHelper
+end
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
