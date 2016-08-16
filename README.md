@@ -1,15 +1,22 @@
 # NdrUi [![Build Status](https://travis-ci.org/PublicHealthEngland/ndr_ui.svg)](https://travis-ci.org/PublicHealthEngland/ndr_ui)
 
 This is the Public Health England (PHE) National Disease Registration (NDR) User Interface rubygem,
-providing:
+providing a set of core features:
 
 1. jQuery
 2. [Bootstrap](http://getbootstrap.com)
 3. a Bootstrap based Rails Form Builder
 4. ~~Bootstrap based pagination links~~
 5. Bootstrap based Rails Helpers
-6. Bootstrap based [datepicker](https://github.com/eternicode/bootstrap-datepicker)
-7. [Timeago](https://github.com/rmm5t/jquery-timeago) jQuery plugin and Rails Helper
+
+and a set of opt-in plugins:
+
+1. Bootstrap based [datepicker](https://github.com/eternicode/bootstrap-datepicker)
+2. [Timeago](https://github.com/rmm5t/jquery-timeago) jQuery plugin and Rails Helper
+
+Adding third-party plugins to the gem allows us to fix our systems to clearly defined
+versions of the third-party libraries and enables us to add syntactic sugar (in the form of
+preferred setup/defaults and rails helper methods, for example).
 
 To experiment with the code, run `bin/console` for an interactive prompt.
 
@@ -96,6 +103,8 @@ class ApplicationController < ActionController::Base
   helper NdrUi::TimeagoHelper
 end
 ```
+
+Use `<%= timeago_tag(some_time) %>` in your views (see the helper method documentation for more details).
 
 ## Development
 
