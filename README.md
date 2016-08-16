@@ -8,7 +8,7 @@ providing:
 3. a Bootstrap based Rails Form Builder
 4. ~~Bootstrap based pagination links~~
 5. Bootstrap based Rails Helpers
-6. Bootstrap based date picker
+6. Bootstrap based [datepicker](https://github.com/eternicode/bootstrap-datepicker)
 7. [Timeago](https://github.com/rmm5t/jquery-timeago) jQuery plugin and Rails Helper
 
 To experiment with the code, run `bin/console` for an interactive prompt.
@@ -55,9 +55,9 @@ class ApplicationController < ActionController::Base
 end
 ```
 
-### Date Picker
+### Datepicker
 
-To use the date picker, require it after ndr_ui. For example:
+To use the Bootstrap based [datepicker](https://github.com/eternicode/bootstrap-datepicker), require it after ndr_ui. For example:
 
 In `app/assets/javascripts/application.js`:
 
@@ -77,7 +77,7 @@ In `app/assets/stylesheets/application.scss`:
 
 ### Timeago
 
-To use the Timeago jQuery plugin and helper method:
+To use the [Timeago](https://github.com/rmm5t/jquery-timeago) jQuery plugin and helper method:
 
 Require it after ndr_ui at the top of `app/assets/javascripts/application.js`:
 
@@ -107,7 +107,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/PublicHealthEngland/ndr_ui.
 
-This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
+This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org/) code of conduct.
 
 
 ## License
