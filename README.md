@@ -9,6 +9,7 @@ providing:
 4. ~~Bootstrap based pagination links~~
 5. Bootstrap based Rails Helpers
 6. Bootstrap based date picker
+7. [Timeago](https://github.com/rmm5t/jquery-timeago) jQuery plugin and Rails Helper
 
 To experiment with the code, run `bin/console` for an interactive prompt.
 
