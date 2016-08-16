@@ -20,6 +20,7 @@ module NdrUi
       [:date_select, :time_select, :datetime_select]
     end
 
+    include CssHelper
     include Bootstrap::FormControlClass
     include Bootstrap::Readonly
     include Bootstrap::InlineErrorsAndWarnings
@@ -106,19 +107,5 @@ module NdrUi
     def label_columns
       horizontal_mode === true ? 3 : horizontal_mode
     end
-
-    # This method merges the specified css_classes into the options hash
-    def css_class_options_merge(options, css_classes = [], &block)
-      options.symbolize_keys!
-      css_classes += options[:class].split(' ') if options.include?(:class)
-      yield(css_classes) if block_given?
-      options[:class] = css_classes.join(' ') unless css_classes.empty?
-      unless css_classes == css_classes.uniq
-        fail "Multiple css class definitions: #{css_classes.inspect}"
-      end
-
-      options
-    end
-    private :css_class_options_merge
   end
 end

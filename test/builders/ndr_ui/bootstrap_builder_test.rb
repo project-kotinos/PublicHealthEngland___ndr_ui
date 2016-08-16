@@ -189,52 +189,5 @@ module NdrUi
         assert_nil form.label_columns
       end
     end
-
-    test 'css_class_options_merge' do
-      post = Post.new
-      bootstrap_form_for post do |form|
-        assert_equal({}, form.send(:css_class_options_merge, {}))
-
-        original_options = {}
-        assert_equal(
-          { class: 'form-control' },
-          form.send(:css_class_options_merge, original_options, ['form-control'])
-        )
-
-        original_options = { 'data-url' => '/vim/...', 'class' => 'col-md-6', 'value' => nil }
-        assert_equal(
-          {
-            "data-url": '/vim/...',
-            class: 'form-control col-md-6',
-            value: nil
-          },
-          form.send(:css_class_options_merge, original_options, ['form-control'])
-        )
-
-        original_options = { 'data-url' => '/vim/...', 'class' => '', 'value' => nil }
-        assert_equal(
-          {
-            "data-url": '/vim/...',
-            class: 'form-control',
-            value: nil
-          },
-          form.send(:css_class_options_merge, original_options, ['form-control']) do |css_classes|
-            css_classes << 'col-md-6' if false
-          end
-        )
-
-        original_options = { 'data-url' => '/vim/...', 'class' => '', 'value' => nil }
-        assert_equal(
-          {
-            "data-url": '/vim/...',
-            class: 'form-control col-md-6',
-            value: nil
-          },
-          form.send(:css_class_options_merge, original_options, ['form-control']) do |css_classes|
-            css_classes << 'col-md-6' if true
-          end
-        )
-      end
-    end
   end
 end
