@@ -2,5 +2,5 @@
 
 # This stores the current version of the NdrUi gem. Use semantic versioning http://semver.org
 module NdrUi
-  VERSION = '1.5.1'.freeze
+  VERSION = '1.6.0'.freeze
 end
