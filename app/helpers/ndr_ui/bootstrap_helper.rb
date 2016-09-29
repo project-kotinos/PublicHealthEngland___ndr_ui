@@ -1,7 +1,3 @@
-require_relative 'bootstrap/dropdown_helper'
-require_relative 'bootstrap/modal_helper'
-require_relative 'bootstrap/panel_helper'
-
 module NdrUi
   # Provides helper methods for the Twitter Bootstrap framework
   module BootstrapHelper

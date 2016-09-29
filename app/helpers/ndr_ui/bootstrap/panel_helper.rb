@@ -1,5 +1,3 @@
-require_relative 'accordion'
-
 module NdrUi
   module Bootstrap
     # This provides accordion

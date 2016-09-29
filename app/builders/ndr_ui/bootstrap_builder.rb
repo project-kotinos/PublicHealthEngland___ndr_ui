@@ -1,7 +1,3 @@
-require_relative 'bootstrap/form_control_class'
-require_relative 'bootstrap/readonly'
-require_relative 'bootstrap/inline_errors_and_warnings'
-
 module NdrUi
   # Our Bootstrp FormBuilder subclass
   class BootstrapBuilder < ActionView::Helpers::FormBuilder
