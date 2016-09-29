@@ -17,9 +17,9 @@ module NdrUi
     end
 
     include CssHelper
-    include Bootstrap::FormControlClass
-    include Bootstrap::Readonly
-    include Bootstrap::InlineErrorsAndWarnings
+    include ::NdrUi::Bootstrap::FormControlClass
+    include ::NdrUi::Bootstrap::Readonly
+    include ::NdrUi::Bootstrap::InlineErrorsAndWarnings
 
     attr_accessor :horizontal_mode
 
