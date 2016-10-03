@@ -1,1 +1,6 @@
 @import "bootstrap-datepicker-1.6.0-dist/css/bootstrap-datepicker3";
+
+// Ensure date picker renders over the static nav
+.datepicker {
+  z-index: (1030 + 1) !important;
+}
