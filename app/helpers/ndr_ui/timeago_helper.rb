@@ -18,6 +18,7 @@ module NdrUi
     #   timeago_tag Date.today, class: 'apples' # =>
     #     <time datetime="2016-08-16" class="timeago apples">August 16, 2016</time>
     def timeago_tag(date_or_time, options = {})
+      return if date_or_time.nil?
       options   = css_class_options_merge(options, %w(timeago))
       html5     = true unless options.delete(:html5) == false
       content   = I18n.l(date_or_time, format: :long)

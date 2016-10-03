@@ -58,5 +58,10 @@ module NdrUi
                          legacy.timeago_tag(object, pubdate: true)
       end
     end
+
+    test 'timeago_tag with nil date' do
+      assert_dom_equal '', timeago_tag(nil)
+      assert_dom_equal '', timeago_tag(nil, pubdate: true)
+    end
   end
 end
