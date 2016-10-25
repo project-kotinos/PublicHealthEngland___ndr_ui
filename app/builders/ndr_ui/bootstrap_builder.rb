@@ -103,5 +103,8 @@ module NdrUi
     def label_columns
       horizontal_mode === true ? 3 : horizontal_mode
     end
+
+    # Lastly we run the bootstrap_builder hooks
+    ActiveSupport.run_load_hooks(:bootstrap_builder, self)
   end
 end
