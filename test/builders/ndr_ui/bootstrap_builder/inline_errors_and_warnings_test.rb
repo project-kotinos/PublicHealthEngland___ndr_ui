@@ -5,6 +5,24 @@ class InlineErrorsAndWarningsTest < ActionView::TestCase
   tests ActionView::Helpers::FormHelper
   include NdrUi::BootstrapHelper
 
+  test 'should create alias feature methods' do
+    post = Post.new
+
+    bootstrap_form_for post do |form|
+      assert form.respond_to?(:text_field_with_inline_errors)
+      assert form.respond_to?(:text_field_without_inline_errors)
+
+      assert form.respond_to?(:collection_select_with_inline_errors)
+      assert form.respond_to?(:collection_select_without_inline_errors)
+
+      assert form.respond_to?(:time_select_with_inline_errors)
+      assert form.respond_to?(:time_select_without_inline_errors)
+
+      refute form.respond_to?(:hidden_field_with_inline_errors)
+      refute form.respond_to?(:hidden_field_without_inline_errors)
+    end
+  end
+
   test 'each field should have a single help-block' do
     post = Post.new
 

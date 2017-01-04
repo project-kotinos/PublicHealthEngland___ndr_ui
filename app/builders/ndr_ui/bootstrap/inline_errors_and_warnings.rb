@@ -18,15 +18,25 @@ module NdrUi
         end
       end
 
+      def self.add_inline_errors_and_warnings_to_field_helper(selector)
+        define_method("#{selector}_with_inline_errors") do |method, *args, &block|
+          html = send("#{selector}_without_inline_errors", method, *args, &block)
+          return html + inline_errors_and_warnings(method)
+        end
+      end
+
       def self.included(base)
         excluded = [:label, :fields_for, :hidden_field]
 
-        (base.all_known_field_helpers - excluded).each do |selector|
-          class_eval <<-END, __FILE__, __LINE__ + 1
-            def #{selector}(method, *)
-              super + inline_errors_and_warnings(method)
-            end
-          END
+        # Allthough highly unlikely, through the use of | in all_known_field_helpers),
+        # uniq ensures we avoid a stack overflow
+        (base.all_known_field_helpers - excluded).uniq.each do |selector|
+          class_eval do
+            add_inline_errors_and_warnings_to_field_helper(selector)
+          end
+
+          base.send(:alias_method, "#{selector}_without_inline_errors".to_sym, selector)
+          base.send(:alias_method, selector, "#{selector}_with_inline_errors".to_sym)
         end
       end
 
