@@ -14,7 +14,7 @@ module NdrUi
             end
 
           options = { class: 'help-block', data:  { feedback_for: feedback_for } }
-          content_tag(:span, @template_object.capture(&block), options)
+          content_tag(:div, @template_object.capture(&block), options)
         end
       end
 
@@ -46,11 +46,11 @@ module NdrUi
         HelpBlock.new(object_name, method, @template, options).render do
           ''.html_safe.tap do |buffer|
             errors = @template.safe_join(object.errors[method], @template.tag(:br))
-            buffer << @template.content_tag(:span, errors, class: 'text-danger')
+            buffer << @template.content_tag(:div, errors, class: 'text-danger')
 
             if object_supports_warnings?
               warnings = @template.safe_join(object.warnings[method], @template.tag(:br))
-              buffer << @template.content_tag(:span, warnings, class: 'text-warning')
+              buffer << @template.content_tag(:div, warnings, class: 'text-warning')
             end
           end
         end
