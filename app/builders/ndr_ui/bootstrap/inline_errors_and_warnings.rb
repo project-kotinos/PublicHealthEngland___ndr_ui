@@ -28,7 +28,7 @@ module NdrUi
       def self.included(base)
         excluded = [:label, :fields_for, :hidden_field]
 
-        # Allthough highly unlikely, through the use of | in all_known_field_helpers),
+        # Although highly unlikely, through the use of | in all_known_field_helpers),
         # uniq ensures we avoid a stack overflow
         (base.all_known_field_helpers - excluded).uniq.each do |selector|
           class_eval do
