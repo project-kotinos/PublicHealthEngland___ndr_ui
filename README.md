@@ -82,6 +82,8 @@ In `app/assets/stylesheets/application.scss`:
 */
 ```
 
+Use `<%= form.datepicker_field(method, options) %>` in your Bootstrap forms (see the method documentation for more details).
+
 ### Timeago
 
 To use the [Timeago](https://github.com/rmm5t/jquery-timeago) jQuery plugin and helper method:

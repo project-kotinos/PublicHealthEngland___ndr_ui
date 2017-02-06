@@ -20,6 +20,7 @@ module NdrUi
     include ::NdrUi::Bootstrap::FormControlClass
     include ::NdrUi::Bootstrap::Readonly
     include ::NdrUi::Bootstrap::InlineErrorsAndWarnings
+    include ::NdrUi::Bootstrap::Datepicker
 
     attr_accessor :horizontal_mode
 
