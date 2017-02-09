@@ -1,30 +1,6 @@
+inherit_from: 'https://raw.githubusercontent.com/PublicHealthEngland/ndr_dev_support/master/.rubocop.yml'
+
 AllCops:
   Exclude:
-    - gemfiles/vendor/**/*
     - test/dummy/db/schema.rb
-    - vendor/**/*
   TargetRubyVersion: 2.3
-
-Rails:
-  Enabled: true
-
-# Multi-line method chaining should be done with trailing dots.
-Style/DotPosition:
-  EnforcedStyle: trailing
-
-# Would enforce "-> { }", which we cannot use yet.
-Lambda:
-  Enabled: false
-
-# ...
-LineLength:
-  Max: 99
-  Exclude:
-    - bin/*
-    - test/dummy/**/*.rb
-
-# Relax some of the cops for tests
-Metrics/ClassLength: &exclude_tests
-  Exclude:
-    - test/**/*_test.rb
-# Metrics/MethodLength: *exclude_tests
