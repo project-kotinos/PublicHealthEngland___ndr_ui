@@ -4,6 +4,10 @@ file safety:
     comments: 
     reviewed_by: timgentry
     safe_revision: 3114ac4f6660e540f28bd3e64f9ecc6a6635d4cb
+  ".hound.yml":
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d6e8188189748f534ca47fe03e0d0e044c4e51d4
   ".rubocop.yml":
     comments: 
     reviewed_by: timgentry
@@ -40,10 +44,50 @@ file safety:
     comments: 
     reviewed_by: timgentry
     safe_revision: bad42dce29e241c5138cf113f9bce4fba59adb3d
+  app/assets/javascripts/ndr_ui/datepicker.js:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  app/assets/javascripts/ndr_ui/index.js:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  app/assets/javascripts/ndr_ui/timeago.js:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
   app/assets/stylesheets/ndr_ui/.keep:
     comments: 
     reviewed_by: timgentry
     safe_revision: bad42dce29e241c5138cf113f9bce4fba59adb3d
+  app/assets/stylesheets/ndr_ui/datepicker.scss:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  app/assets/stylesheets/ndr_ui/index.scss:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  app/builders/ndr_ui/bootstrap/datepicker.rb:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  app/builders/ndr_ui/bootstrap/form_control_class.rb:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  app/builders/ndr_ui/bootstrap/inline_errors_and_warnings.rb:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  app/builders/ndr_ui/bootstrap/readonly.rb:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  app/builders/ndr_ui/bootstrap_builder.rb:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
   app/controllers/.keep:
     comments: 
     reviewed_by: timgentry
@@ -52,11 +96,35 @@ file safety:
     comments: 
     reviewed_by: timgentry
     safe_revision: bad42dce29e241c5138cf113f9bce4fba59adb3d
+  app/helpers/ndr_ui/bootstrap/accordion.rb:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  app/helpers/ndr_ui/bootstrap/dropdown_helper.rb:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  app/helpers/ndr_ui/bootstrap/modal_helper.rb:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  app/helpers/ndr_ui/bootstrap/panel_helper.rb:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
   app/helpers/ndr_ui/bootstrap_accordion.rb:
     comments: 
     reviewed_by: 
     safe_revision: 
   app/helpers/ndr_ui/bootstrap_helper.rb:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  app/helpers/ndr_ui/css_helper.rb:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  app/helpers/ndr_ui/timeago_helper.rb:
     comments: 
     reviewed_by: 
     safe_revision: 
@@ -84,6 +152,14 @@ file safety:
     comments: 
     reviewed_by: 
     safe_revision: 
+  gemfiles/Gemfile.rails42:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  gemfiles/Gemfile.rails50:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
   lib/ndr_ui.rb:
     comments: 
     reviewed_by: timgentry
@@ -95,15 +171,43 @@ file safety:
   lib/ndr_ui/version.rb:
     comments: 
     reviewed_by: timgentry
-    safe_revision: 24313d66dd57e93e8695ff59ce6567283d8d09eb
+    safe_revision: dbd9e8a5b326d4bd9f86480d696213890d8b7db6
   lib/tasks/ndr_ui_tasks.rake:
     comments: 
     reviewed_by: timgentry
     safe_revision: bad42dce29e241c5138cf113f9bce4fba59adb3d
+  lib/templates/erb/scaffold/_form.html.erb:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  lib/templates/erb/scaffold/index.html.erb:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
   ndr_ui.gemspec:
     comments: 
     reviewed_by: 
     safe_revision: 
+  test/builders/ndr_ui/bootstrap_builder/datepicker_test.rb:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 4cb5e5212c138670ea38f3645cd04972fb8e6393
+  test/builders/ndr_ui/bootstrap_builder/inline_errors_and_warnings_test.rb:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 65393beb33238682504b5156c0a17849011cc3fe
+  test/builders/ndr_ui/bootstrap_builder/readonly_test.rb:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 69a952c3c8248717d066849eb4b5a3077a968758
+  test/builders/ndr_ui/bootstrap_builder_test.rb:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 33eae996c2e94aab07aa9ebc0ef5aa905af1b01e
+  test/controllers/posts_controller_test.rb:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 9149f078379ca8ff1f4a777da723202d1f74d4cb
   test/dummy/README.rdoc:
     comments: 
     reviewed_by: timgentry
@@ -119,19 +223,23 @@ file safety:
   test/dummy/app/assets/javascripts/application.js:
     comments: 
     reviewed_by: timgentry
-    safe_revision: bad42dce29e241c5138cf113f9bce4fba59adb3d
+    safe_revision: baebbe1dbfdeda30febd5040887b4701e05a092d
   test/dummy/app/assets/stylesheets/application.css:
     comments: 
     reviewed_by: timgentry
-    safe_revision: bad42dce29e241c5138cf113f9bce4fba59adb3d
+    safe_revision: baebbe1dbfdeda30febd5040887b4701e05a092d
   test/dummy/app/controllers/application_controller.rb:
     comments: 
     reviewed_by: timgentry
-    safe_revision: bad42dce29e241c5138cf113f9bce4fba59adb3d
+    safe_revision: baebbe1dbfdeda30febd5040887b4701e05a092d
   test/dummy/app/controllers/concerns/.keep:
     comments: 
     reviewed_by: timgentry
     safe_revision: bad42dce29e241c5138cf113f9bce4fba59adb3d
+  test/dummy/app/controllers/posts_controller.rb:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: e9ff3c584e33f8672680635774628093d272a104
   test/dummy/app/helpers/application_helper.rb:
     comments: 
     reviewed_by: timgentry
@@ -148,6 +256,10 @@ file safety:
     comments: 
     reviewed_by: timgentry
     safe_revision: bad42dce29e241c5138cf113f9bce4fba59adb3d
+  test/dummy/app/models/post.rb:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 69a952c3c8248717d066849eb4b5a3077a968758
   test/dummy/app/views/layouts/application.html.erb:
     comments: 
     reviewed_by: timgentry
@@ -175,11 +287,15 @@ file safety:
   test/dummy/config/application.rb:
     comments: 
     reviewed_by: timgentry
-    safe_revision: bad42dce29e241c5138cf113f9bce4fba59adb3d
+    safe_revision: d9f0742cca432bde7e6e2bbeed021b70656a1197
   test/dummy/config/boot.rb:
     comments: 
     reviewed_by: timgentry
     safe_revision: bad42dce29e241c5138cf113f9bce4fba59adb3d
+  test/dummy/config/database.yml:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: f7d49d24d047652cb0ddcb09a51854467e299bab
   test/dummy/config/environment.rb:
     comments: 
     reviewed_by: timgentry
@@ -240,6 +356,14 @@ file safety:
     comments: 
     reviewed_by: timgentry
     safe_revision: bad42dce29e241c5138cf113f9bce4fba59adb3d
+  test/dummy/db/migrate/20160223091350_create_posts.rb:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  test/dummy/db/schema.rb:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
   test/dummy/lib/assets/.keep:
     comments: 
     reviewed_by: timgentry
@@ -268,10 +392,38 @@ file safety:
     comments: 
     reviewed_by: 
     safe_revision: 
+  test/helpers/ndr_ui/bootstrap/dropdown_helper_test.rb:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  test/helpers/ndr_ui/bootstrap/modal_helper_test.rb:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  test/helpers/ndr_ui/bootstrap/panel_helper_test.rb:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  test/helpers/ndr_ui/bootstrap_helper_test.rb:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  test/helpers/ndr_ui/css_helper_test.rb:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  test/helpers/ndr_ui/timeago_helper_test.rb:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
   test/integration/navigation_test.rb:
     comments: 
     reviewed_by: timgentry
     safe_revision: bad42dce29e241c5138cf113f9bce4fba59adb3d
+  test/models/post_test.rb:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
   test/ndr_ui_test.rb:
     comments: 
     reviewed_by: timgentry
@@ -280,3 +432,607 @@ file safety:
     comments: 
     reviewed_by: 
     safe_revision: 
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/css/bootstrap-datepicker.css:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/css/bootstrap-datepicker.css.map:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/css/bootstrap-datepicker.min.css:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/css/bootstrap-datepicker.min.css.map:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/css/bootstrap-datepicker.standalone.css:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/css/bootstrap-datepicker.standalone.css.map:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/css/bootstrap-datepicker.standalone.min.css:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/css/bootstrap-datepicker.standalone.min.css.map:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/css/bootstrap-datepicker3.css:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/css/bootstrap-datepicker3.css.map:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/css/bootstrap-datepicker3.min.css:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/css/bootstrap-datepicker3.min.css.map:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/css/bootstrap-datepicker3.standalone.css:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/css/bootstrap-datepicker3.standalone.css.map:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/css/bootstrap-datepicker3.standalone.min.css:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/css/bootstrap-datepicker3.standalone.min.css.map:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/js/bootstrap-datepicker.js:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/js/bootstrap-datepicker.min.js:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.ar.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.az.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.bg.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.bs.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.ca.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.cs.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.cy.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.da.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d73491bda
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.de.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.el.min.js:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.en-AU.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.en-GB.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.eo.min.js:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.es.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49be34918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.et.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.eu.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.fa.min.js:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.fi.min.js:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.fo.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d73491bda
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.fr-CH.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.fr.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.gl.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.he.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.hr.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d73be18da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.hu.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.hy.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.id.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.is.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.it-CH.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.it.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.ja.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.ka.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.kh.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.kk.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.ko.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.kr.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.lt.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.lv.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.me.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.mk.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.mn.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.ms.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.nb.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.nl-BE.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.nl.min.js:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.no.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d73b918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.pl.min.js:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.pt-BR.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.pt.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49b734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.ro.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.rs-latin.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.rs.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.ru.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.sk.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.sl.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.sq.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.sr-latin.min.js:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.sr.min.js:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.sv.min.js:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.sw.min.js:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.th.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.tr.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.uk.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.vi.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.zh-CN.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker-1.6.0-dist/locales/bootstrap-datepicker.zh-TW.min.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/jquery-timeago-1.5.3/jquery.timeago.js:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/jquery-timeago-1.5.3/locales/README.md:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.af.js:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.ar.js:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.az-short.js:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.az.js:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.bg.js:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.bs.js:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.ca.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.cs.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.cy.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.da.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.de-short.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.de.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.dv.js:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.el.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.en-short.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.en.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.es-short.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.es.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.et.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.eu.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.fa-short.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.fa.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.fi.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.fr-short.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.fr.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.gl.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd115b2a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.he.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.hr.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.hu.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.hy.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.id.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.is.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.it-short.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.it.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.ja.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.jv.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.ko.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.ky.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.lt.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.lv.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.mk.js:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.nl.js:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.no.js:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.pl.js:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.pt-br-short.js:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.pt-br.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572ab1d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.pt-short.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd115b2a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.pt.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0bdd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.ro.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0bdd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.rs.js:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.ru.js:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.rw.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.si.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.sk.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.sl.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.sr.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.sv.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.th.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.tr-short.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.tr.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.uk.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.uz.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.vi.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.zh-CN.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
+  vendor/assets/jquery-timeago-1.5.3/locales/jquery.timeago.zh-TW.js:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 3b818a19dd75d1b7810657ba0ddd11572a51d649
