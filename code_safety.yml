@@ -78,8 +78,8 @@ file safety:
     safe_revision: dad6f2c1d259182a7a588af25917af08abe4b5da
   app/builders/ndr_ui/bootstrap/inline_errors_and_warnings.rb:
     comments: 
-    reviewed_by: 
-    safe_revision: 
+    reviewed_by: josh.pencheon
+    safe_revision: 786401cb041990a1a20537f645ce5e5c7a93c7ce
   app/builders/ndr_ui/bootstrap/readonly.rb:
     comments: 
     reviewed_by: timgentry
