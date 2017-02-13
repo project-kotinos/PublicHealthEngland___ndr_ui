@@ -70,24 +70,24 @@ file safety:
     safe_revision: 66eab40e078d3760112102dfc2716fd41fdf06f6
   app/builders/ndr_ui/bootstrap/datepicker.rb:
     comments: 
-    reviewed_by: 
-    safe_revision: 
+    reviewed_by: timgentry
+    safe_revision: 4cb5e5212c138670ea38f3645cd04972fb8e6393
   app/builders/ndr_ui/bootstrap/form_control_class.rb:
     comments: 
-    reviewed_by: 
-    safe_revision: 
+    reviewed_by: timgentry
+    safe_revision: dad6f2c1d259182a7a588af25917af08abe4b5da
   app/builders/ndr_ui/bootstrap/inline_errors_and_warnings.rb:
     comments: 
     reviewed_by: 
     safe_revision: 
   app/builders/ndr_ui/bootstrap/readonly.rb:
     comments: 
-    reviewed_by: 
-    safe_revision: 
+    reviewed_by: timgentry
+    safe_revision: 49ab8decd9ef6fec989e9fee0285a7ee5bfa6e6b
   app/builders/ndr_ui/bootstrap_builder.rb:
     comments: 
-    reviewed_by: 
-    safe_revision: 
+    reviewed_by: timgentry
+    safe_revision: 4cb5e5212c138670ea38f3645cd04972fb8e6393
   app/controllers/.keep:
     comments: 
     reviewed_by: timgentry
@@ -98,28 +98,28 @@ file safety:
     safe_revision: bad42dce29e241c5138cf113f9bce4fba59adb3d
   app/helpers/ndr_ui/bootstrap/accordion.rb:
     comments: 
-    reviewed_by: 
-    safe_revision: 
+    reviewed_by: timgentry
+    safe_revision: 78f33f6f456cb12b4c90fb3863f4aef715bfcd43
   app/helpers/ndr_ui/bootstrap/dropdown_helper.rb:
     comments: 
-    reviewed_by: 
-    safe_revision: 
+    reviewed_by: timgentry
+    safe_revision: ae9fa9c98f7b489a37eb25c9a4819eb13649c99a
   app/helpers/ndr_ui/bootstrap/modal_helper.rb:
     comments: 
-    reviewed_by: 
-    safe_revision: 
+    reviewed_by: timgentry
+    safe_revision: ae9fa9c98f7b489a37eb25c9a4819eb13649c99a
   app/helpers/ndr_ui/bootstrap/panel_helper.rb:
     comments: 
-    reviewed_by: 
-    safe_revision: 
+    reviewed_by: timgentry
+    safe_revision: a513de22bfa6a4fa3e63ddd182636caf1ad10221
   app/helpers/ndr_ui/bootstrap_helper.rb:
     comments: 
-    reviewed_by: 
-    safe_revision: 
+    reviewed_by: timgentry
+    safe_revision: a513de22bfa6a4fa3e63ddd182636caf1ad10221
   app/helpers/ndr_ui/css_helper.rb:
     comments: 
-    reviewed_by: 
-    safe_revision: 
+    reviewed_by: timgentry
+    safe_revision: 33eae996c2e94aab07aa9ebc0ef5aa905af1b01e
   app/helpers/ndr_ui/timeago_helper.rb:
     comments: 
     reviewed_by: timgentry
@@ -162,8 +162,8 @@ file safety:
     safe_revision: 27343997e3e856dd82f8af36ad3c66e1922f0d9c
   lib/ndr_ui/engine.rb:
     comments: 
-    reviewed_by: 
-    safe_revision: 
+    reviewed_by: timgentry
+    safe_revision: fa1b0ea70f3012aadbb838bc28dee5fd75b40d01
   lib/ndr_ui/version.rb:
     comments: 
     reviewed_by: timgentry
@@ -182,8 +182,8 @@ file safety:
     safe_revision: c3e08fd52d30f1fcc2604a3bc553dcdb9d254c2a
   ndr_ui.gemspec:
     comments: 
-    reviewed_by: 
-    safe_revision: 
+    reviewed_by: timgentry
+    safe_revision: 1c7c4e8d417475f3ad575f16b4bb29efb7ec3d55
   test/builders/ndr_ui/bootstrap_builder/datepicker_test.rb:
     comments: 
     reviewed_by: timgentry
