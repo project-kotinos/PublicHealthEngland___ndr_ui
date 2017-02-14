@@ -167,7 +167,7 @@ file safety:
   lib/ndr_ui/version.rb:
     comments: 
     reviewed_by: timgentry
-    safe_revision: dbd9e8a5b326d4bd9f86480d696213890d8b7db6
+    safe_revision: e9ded29d52f76995f569ff54a7ace7b39dd35c22
   lib/tasks/ndr_ui_tasks.rake:
     comments: 
     reviewed_by: timgentry
@@ -183,7 +183,7 @@ file safety:
   ndr_ui.gemspec:
     comments: 
     reviewed_by: timgentry
-    safe_revision: 1c7c4e8d417475f3ad575f16b4bb29efb7ec3d55
+    safe_revision: 0c18ea108a8a4658207b3b0b99787f09f1230849
   test/builders/ndr_ui/bootstrap_builder/datepicker_test.rb:
     comments: 
     reviewed_by: timgentry
