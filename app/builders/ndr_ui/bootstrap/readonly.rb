@@ -9,8 +9,9 @@ module NdrUi
     module Readonly
       def self.included(base)
         # These have different signatures, or aren't affected by `readonly`:
-        needs_custom = [:radio_button, :file_field] + base.field_helpers_from_form_options_helper
         not_affected = [:label, :fields_for]
+        needs_custom = [:radio_button, :file_field, :hidden_field] +
+                       base.field_helpers_from_form_options_helper
 
         (base.field_helpers - needs_custom - not_affected).each do |selector|
           class_eval <<-END, __FILE__, __LINE__ + 1
@@ -62,6 +63,11 @@ module NdrUi
             return super unless readonly?
             readonly_value = options[:readonly_value]
             @template.content_tag(:p, readonly_value, class: 'form-control-static')
+          end
+
+          # Hidden fields should be suppressed when the form is readonly:
+          def hidden_field(*)
+            super unless readonly?
           end
         END
 

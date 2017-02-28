@@ -70,4 +70,24 @@ class ReadonlyTest < ActionView::TestCase
     assert_select 'input[type=text]#post_created_at', 0
     assert_select 'p.form-control-static', text: time.to_s
   end
+
+  test 'hidden fields should not display in readonly' do
+    time = Time.current
+    post = Post.new(created_at: time)
+
+    @output_buffer =
+      bootstrap_form_for post do |form|
+        form.hidden_field :created_at
+      end
+
+    assert_select 'input[type=hidden]#post_created_at'
+    assert_select 'p.form-control-static', 0
+
+    @output_buffer =
+      bootstrap_form_for post, readonly: true do |form|
+        form.hidden_field :created_at
+      end
+    assert_select 'input[type=hidden]#post_created_at', 0
+    assert_select 'p.form-control-static', 0
+  end
 end
