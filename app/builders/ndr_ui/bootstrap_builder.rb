@@ -21,6 +21,7 @@ module NdrUi
     include ::NdrUi::Bootstrap::Readonly
     include ::NdrUi::Bootstrap::InlineErrorsAndWarnings
     include ::NdrUi::Bootstrap::Datepicker
+    include ::NdrUi::Bootstrap::LabelTooltips
 
     attr_accessor :horizontal_mode
 
