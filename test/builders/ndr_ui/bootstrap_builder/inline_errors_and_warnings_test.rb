@@ -67,4 +67,20 @@ class InlineErrorsAndWarningsTest < ActionView::TestCase
       )
     end
   end
+
+  test 'should display errors when readonly' do
+    post = Post.new(created_at: Date.new(2001, 2, 3))
+    post.errors.add(:created_at, 'wrong')
+
+    bootstrap_form_for post, readonly: true do |form|
+      assert form.readonly?
+      assert_dom_equal(
+        '<p class="form-control-static">2001-02-03 00:00:00 UTC</p>' \
+        '<span class="help-block" data-feedback-for="post_created_at">' \
+        '<span class="text-danger">wrong</span><span class="text-warning"></span>' \
+        '</span>',
+        form.text_field(:created_at)
+      )
+    end
+  end
 end
