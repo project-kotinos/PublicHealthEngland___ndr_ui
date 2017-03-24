@@ -1,5 +1,9 @@
 class Post < ActiveRecord::Base
   def warnings
-    @warnings ||= Hash.new { |messages, attr| messages[attr] = [] }
+    @warnings ||= ActiveModel::Errors.new(self)
+  end
+
+  def safe?
+    @warnings.empty?
   end
 end

@@ -21,3 +21,9 @@
 
 en:
   hello: "Hello world"
+  warnings:
+    alertbox:
+      base: "Overall warnings:"
+      other:
+        readonly: "Specific warnings:"
+        editing: "Specific warnings (with interaction):"
