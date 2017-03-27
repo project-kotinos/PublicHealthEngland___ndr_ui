@@ -34,6 +34,22 @@ class LabelTooltipsTest < ActionView::TestCase
     assert_select '.question-tooltip', 0
   end
 
+  test 'should not include tooltips when translations is a hash' do
+    post = Post.new
+    NdrUi::BootstrapBuilder.any_instance.stubs(:display?).returns(true)
+
+    I18n.expects(:translate).
+      with(:'tooltips.post.created_at', raise: true).
+      returns(one: 'One', other: 'Other')
+
+    @output_buffer =
+      bootstrap_form_for post do |form|
+        form.label :created_at, 'Test'
+      end
+
+    assert_select '.question-tooltip', 0
+  end
+
   test 'should allow tooltip text to be set explicitly' do
     post = Post.new
     NdrUi::BootstrapBuilder.any_instance.stubs(:display?).returns(true)

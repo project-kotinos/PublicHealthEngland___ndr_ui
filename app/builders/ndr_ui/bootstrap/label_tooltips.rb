@@ -12,7 +12,6 @@ module NdrUi
       # to work as one might expect from reading the documentation.
       # See the source code for ActionView::Helpers::Tags::Label for more.
       #
-      # TODO: Move into NdrUi
       # QUESTION: Parameterise the tooltip so we're not just bound to a question_tooltip ?
       def label(method, text = nil, **options, &block)
         tooltip_text = options.delete(:tooltip)
@@ -33,6 +32,7 @@ module NdrUi
 
       def question_tooltip(method, text = nil)
         text ||= translate_tooltip(method)
+        return unless text.is_a?(String)
         return if text =~ /translation missing/
 
         @template.content_tag(:span, title: text.strip, class: 'question-tooltip') do
