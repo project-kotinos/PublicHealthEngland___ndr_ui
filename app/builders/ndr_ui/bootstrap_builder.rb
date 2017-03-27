@@ -70,8 +70,10 @@ module NdrUi
 
         label_classes = ['control-label']
         label_classes << "col-md-#{label_columns}" if horizontal_mode
+        label_options = {class: label_classes.join(' ')}
+        label_options[:tooltip] = options.delete(:tooltip)
         label_html = if methods.present?
-                       label(methods.first, text, class: label_classes.join(' '))
+                       label(methods.first, text, label_options)
                      else
                        @template.content_tag(:span, text, class: label_classes.join(' '))
                      end

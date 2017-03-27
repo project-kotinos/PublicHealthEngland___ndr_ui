@@ -61,6 +61,15 @@ module NdrUi
         assert_dom_equal '<div class="form-group">' \
           '<label for="post_created_at" class="control-label">Created at</label>' \
           '<div id="dom_id">Pears</div></div>', html
+
+        assert_dom_equal(
+          '<div class="form-group">' \
+          '<label for="post_created_at" class="control-label">Created at ' \
+          '<span title="Carrot" class="question-tooltip">' \
+          '<span class="glyphicon glyphicon-question-sign"></span></span></label>' \
+          '<div>Apples</div></div>',
+          form.control_group(:created_at, 'Created at', { tooltip: 'Carrot' }, {}, 'Apples')
+        )
       end
     end
 
