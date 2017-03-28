@@ -3,7 +3,7 @@ file safety:
   ".gitignore":
     comments: 
     reviewed_by: timgentry
-    safe_revision: f7d49d24d047652cb0ddcb09a51854467e299bab
+    safe_revision: 5319d975455947b0c0905cffaed9e7e69f49774e
   ".hound.yml":
     comments: 
     reviewed_by: timgentry
@@ -72,6 +72,10 @@ file safety:
     comments: 
     reviewed_by: timgentry
     safe_revision: 4cb5e5212c138670ea38f3645cd04972fb8e6393
+  app/builders/ndr_ui/bootstrap/error_and_warning_alert_boxes.rb:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
   app/builders/ndr_ui/bootstrap/form_control_class.rb:
     comments: 
     reviewed_by: timgentry
@@ -80,10 +84,18 @@ file safety:
     comments: 
     reviewed_by: josh.pencheon
     safe_revision: 786401cb041990a1a20537f645ce5e5c7a93c7ce
+  app/builders/ndr_ui/bootstrap/input_group_addons.rb:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
+  app/builders/ndr_ui/bootstrap/label_tooltips.rb:
+    comments: 
+    reviewed_by: 
+    safe_revision: 
   app/builders/ndr_ui/bootstrap/readonly.rb:
     comments: 
     reviewed_by: timgentry
-    safe_revision: 49ab8decd9ef6fec989e9fee0285a7ee5bfa6e6b
+    safe_revision: c21b700f40adc073b6956b68471a4571ee738263
   app/builders/ndr_ui/bootstrap_builder.rb:
     comments: 
     reviewed_by: timgentry
@@ -167,7 +179,7 @@ file safety:
   lib/ndr_ui/version.rb:
     comments: 
     reviewed_by: timgentry
-    safe_revision: e9ded29d52f76995f569ff54a7ace7b39dd35c22
+    safe_revision: fe799d2699361634d9681d0bae53ad7c1fb5e34d
   lib/tasks/ndr_ui_tasks.rake:
     comments: 
     reviewed_by: timgentry
@@ -188,18 +200,30 @@ file safety:
     comments: 
     reviewed_by: timgentry
     safe_revision: 4cb5e5212c138670ea38f3645cd04972fb8e6393
+  test/builders/ndr_ui/bootstrap_builder/error_and_warning_alert_boxes_test.rb:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 65d8684170c83a4b75969d15d57289792d175844
   test/builders/ndr_ui/bootstrap_builder/inline_errors_and_warnings_test.rb:
     comments: 
     reviewed_by: timgentry
-    safe_revision: 65393beb33238682504b5156c0a17849011cc3fe
+    safe_revision: 997090b9308653ffef85790c506885b5ec9512a6
+  test/builders/ndr_ui/bootstrap_builder/input_group_addons_test.rb:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: 02568fa7e844a5379c1c0eabbd1068704b3094ef
+  test/builders/ndr_ui/bootstrap_builder/label_tooltips_test.rb:
+    comments: 
+    reviewed_by: timgentry
+    safe_revision: a4544b773b46da5b6ebfa8acc19b82cf26cbd37a
   test/builders/ndr_ui/bootstrap_builder/readonly_test.rb:
     comments: 
     reviewed_by: timgentry
-    safe_revision: 69a952c3c8248717d066849eb4b5a3077a968758
+    safe_revision: c21b700f40adc073b6956b68471a4571ee738263
   test/builders/ndr_ui/bootstrap_builder_test.rb:
     comments: 
     reviewed_by: timgentry
-    safe_revision: 33eae996c2e94aab07aa9ebc0ef5aa905af1b01e
+    safe_revision: 6791b82a974af56b4cf894690059ea10d4572f99
   test/controllers/posts_controller_test.rb:
     comments: 
     reviewed_by: timgentry
@@ -255,7 +279,7 @@ file safety:
   test/dummy/app/models/post.rb:
     comments: 
     reviewed_by: timgentry
-    safe_revision: 69a952c3c8248717d066849eb4b5a3077a968758
+    safe_revision: 65d8684170c83a4b75969d15d57289792d175844
   test/dummy/app/views/layouts/application.html.erb:
     comments: 
     reviewed_by: timgentry
@@ -335,7 +359,7 @@ file safety:
   test/dummy/config/locales/en.yml:
     comments: 
     reviewed_by: timgentry
-    safe_revision: bad42dce29e241c5138cf113f9bce4fba59adb3d
+    safe_revision: 65d8684170c83a4b75969d15d57289792d175844
   test/dummy/config/routes.rb:
     comments: 
     reviewed_by: timgentry
