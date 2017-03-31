@@ -42,15 +42,16 @@ module NdrUi
         data = { provide: 'datepicker' }
         data[:'date-end-date'] = '0d' if options.delete(:no_future)
 
-        html = text_field_without_inline_errors(method, options)
-        return html if readonly?
+        html   = text_field_without_inline_errors(method, options)
+        errors = inline_errors_and_warnings(method)
+        return html + errors if readonly?
 
         @template.content_tag(:div, class: 'input-group date', data: data) do
           html +
             @template.content_tag(:span,
                                   @template.bootstrap_icon_tag(:calendar),
                                   'aria-hidden': 'true', class: 'input-group-addon')
-        end + inline_errors_and_warnings(method)
+        end + errors
       end
     end
   end
