@@ -17,7 +17,7 @@ module NdrUi
           class_eval <<-END, __FILE__, __LINE__ + 1
             def #{selector}(method, options = {}, *rest)
               return super unless readonly?
-              readonly_value = options.fetch(:readonly_value, object.send(method))
+              readonly_value = options.symbolize_keys.fetch(:readonly_value, object.send(method))
               @template.content_tag(:p, readonly_value, class: 'form-control-static')
             end
           END
@@ -27,7 +27,7 @@ module NdrUi
           class_eval <<-END, __FILE__, __LINE__ + 1
             def #{selector}(method, _something, options = {}, *rest)
               return super unless readonly?
-              readonly_value = options.fetch(:readonly_value, object.send(method))
+              readonly_value = options.symbolize_keys.fetch(:readonly_value, object.send(method))
               @template.content_tag(:p, readonly_value, class: 'form-control-static')
             end
           END
@@ -37,7 +37,7 @@ module NdrUi
           class_eval <<-END, __FILE__, __LINE__ + 1
             def #{selector}(method, collection, value_method, text_method, options = {}, *rest)
               return super unless readonly?
-              readonly_value = options.fetch(:readonly_value, object.send(method))
+              readonly_value = options.symbolize_keys.fetch(:readonly_value, object.send(method))
               @template.content_tag(:p, readonly_value, class: 'form-control-static')
             end
           END
@@ -47,21 +47,21 @@ module NdrUi
           # grouped_collection_select takes many other arguments
           def grouped_collection_select(method, collection, group_method, group_label_method, option_key_method, option_value_method, options = {}, html_options = {})
             return super unless readonly?
-            readonly_value = options.fetch(:readonly_value, object.send(method))
+            readonly_value = options.symbolize_keys.fetch(:readonly_value, object.send(method))
             @template.content_tag(:p, readonly_value, class: 'form-control-static')
           end
 
           # radio_button takes another intermediate argument:
           def radio_button(method, tag_value, options = {})
             return super unless readonly?
-            readonly_value = options.fetch(:readonly_value, object.send(method))
+            readonly_value = options.symbolize_keys.fetch(:readonly_value, object.send(method))
             @template.content_tag(:p, readonly_value, class: 'form-control-static')
           end
 
           # For file_field, the readonly value defaults to nil:
           def file_field(method, options = {})
             return super unless readonly?
-            readonly_value = options[:readonly_value]
+            readonly_value = options.symbolize_keys[:readonly_value]
             @template.content_tag(:p, readonly_value, class: 'form-control-static')
           end
 
