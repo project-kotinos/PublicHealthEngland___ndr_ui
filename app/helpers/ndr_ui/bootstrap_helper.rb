@@ -1,6 +1,7 @@
 module NdrUi
   # Provides helper methods for the Twitter Bootstrap framework
   module BootstrapHelper
+    include ::NdrUi::Bootstrap::BreadcrumbsHelper
     include ::NdrUi::Bootstrap::DropdownHelper
     include ::NdrUi::Bootstrap::ModalHelper
     include ::NdrUi::Bootstrap::PanelHelper
