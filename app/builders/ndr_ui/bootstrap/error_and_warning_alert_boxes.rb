@@ -88,7 +88,6 @@ module NdrUi
       end
 
       def warning_alert_box
-        object.safe? if object && object.respond_to?(:safe?)
         issue_alert_box(:warnings)
       end
 

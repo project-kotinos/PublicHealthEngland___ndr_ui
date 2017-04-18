@@ -7,8 +7,6 @@ class ErrorAndWarningAlertBoxesTest < ActionView::TestCase
 
   test 'error_and_warning_alert_boxes display nothing' do
     post = Post.new
-    Post.any_instance.stubs(:valid?).returns(true)
-    Post.any_instance.expects(:safe?).once
     bootstrap_form_for post do |form|
       html = form.error_and_warning_alert_boxes
       assert_equal '', html
@@ -18,7 +16,6 @@ class ErrorAndWarningAlertBoxesTest < ActionView::TestCase
   test 'error_and_warning_alert_boxes display only warnings' do
     post = Post.new
     post.warnings.add(:base, 'Warning')
-    Post.any_instance.expects(:safe?).once
 
     @output_buffer = bootstrap_form_for(post, &:error_and_warning_alert_boxes)
 
@@ -32,10 +29,6 @@ class ErrorAndWarningAlertBoxesTest < ActionView::TestCase
     post = Post.new
     post.errors.add(:base, 'Error')
 
-    Post.any_instance.stubs(:valid?).returns(false)
-    Post.any_instance.expects(:safe?).once
-    post.valid?
-
     @output_buffer = bootstrap_form_for(post, &:error_and_warning_alert_boxes)
 
     assert_select 'div.alert', 1
@@ -48,9 +41,6 @@ class ErrorAndWarningAlertBoxesTest < ActionView::TestCase
     post = Post.new
     post.errors.add(:base, 'Error')
     post.warnings.add(:base, 'Warning')
-
-    Post.any_instance.stubs(:valid?).returns(false)
-    Post.any_instance.expects(:safe?).once
 
     @output_buffer = bootstrap_form_for(post, &:error_and_warning_alert_boxes)
 
@@ -68,7 +58,6 @@ class ErrorAndWarningAlertBoxesTest < ActionView::TestCase
     post.warnings.add(:base, 'Warning 1')
     post.warnings.add(:base, 'Warning 2')
     post.warnings.add(:base, 'Warning 3')
-    Post.any_instance.expects(:safe?).once
 
     @output_buffer = bootstrap_form_for(post, &:error_and_warning_alert_boxes)
 
@@ -83,7 +72,6 @@ class ErrorAndWarningAlertBoxesTest < ActionView::TestCase
     post.warnings.add(:base, 'Base Warning 1')
     post.warnings.add(:somewhere1, 'Warning 1')
     post.warnings.add(:somewhere2, 'Warning 2')
-    Post.any_instance.expects(:safe?).once
 
     bootstrap_form_for post do |form|
       @output_buffer = form.error_and_warning_alert_boxes
@@ -105,7 +93,6 @@ class ErrorAndWarningAlertBoxesTest < ActionView::TestCase
     post.warnings.add(:base, 'Base Warning 1')
     post.warnings.add(:somewhere1, 'Warning 1')
     post.warnings.add(:somewhere2, 'Warning 2')
-    Post.any_instance.expects(:safe?).once
 
     bootstrap_form_for post do |form|
       form.readonly = true
