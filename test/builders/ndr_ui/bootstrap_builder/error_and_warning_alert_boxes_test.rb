@@ -109,4 +109,16 @@ class ErrorAndWarningAlertBoxesTest < ActionView::TestCase
       end
     end
   end
+
+  test 'error_and_warning_alert_boxes should not raise in the absence of base errors/warnings' do
+    post = Post.new
+    post.errors.add(:somewhere1, 'Error 1')
+    post.warnings.add(:somewhere1, 'Warning 1')
+
+    assert_nothing_raised do
+      bootstrap_form_for post do |form|
+        form.error_and_warning_alert_boxes
+      end
+    end
+  end
 end

@@ -95,7 +95,7 @@ module NdrUi
         raise ArgumentError unless [:errors, :warnings].include?(type)
         return SAFE_BLANK_STRING unless object && object.respond_to?(type) && object.send(type).any?
 
-        issues = object.send(type).to_hash
+        issues = object.send(type).messages
         @template.bootstrap_alert_tag(ALERT_BOX_TYPE[type]) do
           alertbox_heading(type, issues) +
             base_issues(type, issues[:base]) +
