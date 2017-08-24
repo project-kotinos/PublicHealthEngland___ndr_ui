@@ -95,7 +95,7 @@ module NdrUi
         raise ArgumentError unless [:errors, :warnings].include?(type)
         return SAFE_BLANK_STRING unless object && object.respond_to?(type) && object.send(type).any?
 
-        issues = object.send(type).messages
+        issues = object.send(type).to_hash
         @template.bootstrap_alert_tag(ALERT_BOX_TYPE[type]) do
           alertbox_heading(type, issues) +
             base_issues(type, issues[:base]) +
@@ -117,7 +117,7 @@ module NdrUi
 
       # This wraps the issues in a paragraph and puts them into an unordered list
       def issue_wrapper(type, name, messages, &block)
-        return SAFE_BLANK_STRING if messages.empty?
+        return SAFE_BLANK_STRING if messages.nil? || messages.empty?
 
         @template.content_tag(:p) do
           wrapper_heading(type, name) +
