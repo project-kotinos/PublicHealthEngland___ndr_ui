@@ -117,7 +117,7 @@ module NdrUi
 
       # This wraps the issues in a paragraph and puts them into an unordered list
       def issue_wrapper(type, name, messages, &block)
-        return SAFE_BLANK_STRING if messages.nil? || messages.empty?
+        return SAFE_BLANK_STRING if messages.blank?
 
         @template.content_tag(:p) do
           wrapper_heading(type, name) +
