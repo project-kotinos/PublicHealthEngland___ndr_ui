@@ -76,7 +76,7 @@ class LabelTooltipsTest < ActionView::TestCase
         form.label :updated_at
       end
 
-    assert_select '.question-tooltip', { class: '.question-tooltip', text: 'Time post was last updated'}
+    assert_select '.question-tooltip', title: 'Time post was last updated'
     assert_select 'label', attributes: { for: 'post_updated_at', text: 'Updated' }
 
     @output_buffer =

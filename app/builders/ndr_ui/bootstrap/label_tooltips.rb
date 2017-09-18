@@ -29,11 +29,11 @@ module NdrUi
       private
 
       def question_tooltip(method, text = nil)
+        # Suppress a tooltip if you really want/need to...
+        return if text == false
         text ||= translate_tooltip(method)
         return unless text.is_a?(String)
         return if text =~ /translation missing/
-        # Suppress a tooltip if you really want/need to...
-        return if text == false
 
         @template.content_tag(:span, title: text.strip, class: 'question-tooltip') do
           @template.bootstrap_icon_tag('question-sign')
