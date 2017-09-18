@@ -19,6 +19,7 @@ class LabelTooltipsTest < ActionView::TestCase
       end
 
     assert_select 'span', attributes: { class: '.question-tooltip', text: 'Tooltip' }
+    assert_select 'label', attributes: { for: 'post_created_at' }
   end
 
   test 'should not include tooltips when there is no translation' do
@@ -32,6 +33,7 @@ class LabelTooltipsTest < ActionView::TestCase
       end
 
     assert_select '.question-tooltip', 0
+    assert_select 'label', attributes: { for: 'post_created_at' }
   end
 
   test 'should not include tooltips when translations is a hash' do
@@ -48,6 +50,7 @@ class LabelTooltipsTest < ActionView::TestCase
       end
 
     assert_select '.question-tooltip', 0
+    assert_select 'label', attributes: { for: 'post_created_at' }
   end
 
   test 'should allow tooltip text to be set explicitly' do
@@ -61,6 +64,7 @@ class LabelTooltipsTest < ActionView::TestCase
       end
 
     assert_select '.question-tooltip', attributes: { text: 'Not the translated value' }
+    assert_select 'label', attributes: { for: 'post_created_at' }
   end
 
   test 'should allow tooltips to be suppressed' do
@@ -69,9 +73,18 @@ class LabelTooltipsTest < ActionView::TestCase
 
     @output_buffer =
       bootstrap_form_for post do |form|
-        form.label :created_at, tooltip: false
+        form.label :updated_at
+      end
+
+    assert_select '.question-tooltip', { class: '.question-tooltip', text: 'Time post was last updated'}
+    assert_select 'label', attributes: { for: 'post_updated_at', text: 'Updated' }
+
+    @output_buffer =
+      bootstrap_form_for post do |form|
+        form.label :updated_at, tooltip: false
       end
 
     assert_select '.question-tooltip', 0
+    assert_select 'label', attributes: { for: 'post_updated_at', text: 'Updated' }
   end
 end

@@ -27,3 +27,9 @@ en:
       other:
         readonly: "Specific warnings:"
         editing: "Specific warnings (with interaction):"
+  attributes:
+    post:
+      updated_at: 'Updated'
+  tooltips:
+    post:
+      updated_at: 'Time post was last updated'

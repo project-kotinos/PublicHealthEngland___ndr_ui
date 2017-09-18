@@ -15,8 +15,6 @@ module NdrUi
       # QUESTION: Parameterise the tooltip so we're not just bound to a question_tooltip ?
       def label(method, text = nil, **options, &block)
         tooltip_text = options.delete(:tooltip)
-        # Suppress a tooltip if you really want/need to...
-        return if tooltip_text == false
 
         super(method, text, options) do |builder|
           output = block ? block.call : text
@@ -34,6 +32,8 @@ module NdrUi
         text ||= translate_tooltip(method)
         return unless text.is_a?(String)
         return if text =~ /translation missing/
+        # Suppress a tooltip if you really want/need to...
+        return if text == false
 
         @template.content_tag(:span, title: text.strip, class: 'question-tooltip') do
           @template.bootstrap_icon_tag('question-sign')
