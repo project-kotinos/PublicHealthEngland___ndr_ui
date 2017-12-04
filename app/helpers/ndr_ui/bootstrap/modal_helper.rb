@@ -48,9 +48,20 @@ module NdrUi
             content_tag(:div, content_tag(:h4, title, class: 'modal-title'),
                         class: 'modal-header') +
               content_tag(:div, args.first, class: 'modal-body') +
-              bootstrap_modal_default_footer
+              bootstrap_modal_default_footer(options)
           end
         end
+      end
+
+      def bootstrap_modal_save_buttons
+        button_tag("Don't save", class: 'btn btn-default', "data-dismiss": 'modal') +
+          submit_tag('Save',
+                     class: 'btn-primary',
+                     disable_with: 'Saving&hellip;'.html_safe)
+      end
+
+      def bootstrap_modal_close_buttons
+        button_tag('Close', class: 'btn btn-default', "data-dismiss": 'modal')
       end
 
       private
@@ -64,12 +75,9 @@ module NdrUi
         classes.join(' ')
       end
 
-      def bootstrap_modal_default_footer
+      def bootstrap_modal_default_footer(options)
         content_tag(:div, class: 'modal-footer') do
-          button_tag("Don't save", class: 'btn btn-default', "data-dismiss": 'modal') +
-            submit_tag('Save',
-                       class: 'btn-primary',
-                       disable_with: 'Saving&hellip;'.html_safe)
+          options[:readonly] ? bootstrap_modal_close_buttons : bootstrap_modal_save_buttons
         end
       end
     end
