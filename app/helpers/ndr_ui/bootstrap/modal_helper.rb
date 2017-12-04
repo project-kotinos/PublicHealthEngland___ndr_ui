@@ -4,6 +4,164 @@ module NdrUi
     module ModalHelper
       MODAL_SIZES = %w(sm lg).freeze
 
+      # Creates a bootstrap modal dialog wrapper. the content is wrapped in a modal-content.
+      #
+      # ==== Signatures
+      #
+      #   bootstrap_modal_dialog_tag(options = {}) do
+      #     # content for modal
+      #   end
+      #
+      # ==== Examples
+      #
+      #   <%= bootstrap_modal_tag size: 'lg', id: 'fruit' do %>
+      #     Check it out!!
+      #   <% end %>
+      #   # =>
+      #   <div id="fruit" class="modal modal-lg">
+      #     <div class="modal-content">Check it out!!</div>
+      #   </div>
+      def bootstrap_modal_dialog_tag(options = {}, &block)
+        return unless block_given?
+
+        content_tag(:div, class: bootstrap_modal_classes(options), role: 'document') do
+          content_tag(:div, capture(&block), class: 'modal-content')
+        end
+      end
+
+      # Creates a simple bootstrap modal header.
+      #
+      # ==== Signatures
+      #
+      #   bootstrap_modal_header_tag(content, options = {})
+      #   bootstrap_modal_header_tag(options = {}) do
+      #     # content for modal header
+      #   end
+      #
+      # ==== Options
+      # * <tt>dismissible: false</tt> - This will set whether or not a close X button
+      #   will appear, allowing the modal box to be dismissed by the user. Defaults to false.
+      #
+      # ==== Examples
+      #
+      #   <%= bootstrap_modal_header_tag do %>
+      #     Check it out!!
+      #   <% end %>
+      #   # => <div class="modal-header">Check it out!!</div>
+      def bootstrap_modal_header_tag(*args, &block)
+        return bootstrap_modal_header_tag(capture(&block), *args) if block_given?
+        options = args.extract_options!
+        options.stringify_keys!
+
+        # unless options.include?('dismissible') && !options['dismissible']
+        #   options['dismissible'] = true
+        # end
+
+        heading = content_tag(:h4, args.first, class: 'modal-title')
+        heading = button_tag(content_tag(:span, '×', "aria-hidden": 'true'),
+                             type: 'button', class: 'close', "data-dismiss": 'modal',
+                             "aria-label": 'Close') + heading if options.delete('dismissible')
+
+        content_tag(:div, heading, class: 'modal-header')
+      end
+
+      # Creates a simple bootstrap modal body.
+      #
+      # ==== Signatures
+      #
+      #   bootstrap_modal_body_tag(content)
+      #   bootstrap_modal_body_tag do
+      #     # content for modal body
+      #   end
+      #
+      # ==== Examples
+      #
+      #   <%= bootstrap_modal_body_tag do %>
+      #     Check it out!!
+      #   <% end %>
+      #   # => <div class="modal-body">Check it out!!</div>
+      def bootstrap_modal_body_tag(*args, &block)
+        return bootstrap_modal_body_tag(capture(&block), *args) if block_given?
+
+        content_tag(:div, args.first, class: 'modal-body')
+      end
+
+      # Creates a simple bootstrap modal footer. If called with a content block, that block
+      # defines the non-readonly button(s). Alternatively, if called with a label first parameter,
+      # then a default button is created with that label. If no block or label is defined, then
+      # the default "Don't save" and "Save" buttons are returned.
+      #
+      # ==== Signatures
+      #
+      #   bootstrap_modal_footer_tag(options = {}) do
+      #     # content for modal footer
+      #   end
+      #   bootstrap_modal_footer_tag(default_button_label, options = {})
+      #   bootstrap_modal_footer_tag(options = {})
+      #
+      # ==== Options
+      # * <tt>readonly: false</tt> - This will set whether or not a close button
+      #   will appear in the footer, regardless of the buttons defined in the label/block.
+      #   Defaults to false.
+      #
+      # ==== Examples
+      #
+      #   <%= bootstrap_modal_footer_tag('Button text', readonly: true)
+      #   # =>
+      #   <div class="modal-footer">
+      #     <button name="button" type="submit" class="btn btn-default" data-dismiss="modal">
+      #       Close
+      #     </button>
+      #   </div>
+      #
+      #   <%= bootstrap_modal_footer_tag(readonly: false) do
+      #     button_tag('Non-readonly default', class: 'btn btn-default', "data-dismiss": 'modal') +
+      #       button_tag('Non-readonly primary', class: 'btn btn-primary', "data-dismiss": 'modal')
+      #   end %>
+      #   # =>
+      #   <div class="modal-footer">
+      #     <button name="button" type="submit" class="btn btn-default" data-dismiss="modal">
+      #       Non-readonly default
+      #     </button>
+      #     <button name="button" type="submit" class="btn btn-primary" data-dismiss="modal">
+      #       Non-readonly primary
+      #     </button>
+      #   </div>
+      #
+      #   <%= bootstrap_modal_footer_tag('Button text') %>
+      #   # =>
+      #   <div class="modal-footer">
+      #     <button name="button" type="submit" class="btn btn-default" data-dismiss="modal">
+      #       Button text
+      #     </button>
+      #   </div>
+      #
+      #   <%= bootstrap_modal_footer_tag %>
+      #   # =>
+      #   <div class="modal-footer">
+      #     <button name="button" type="submit" class="btn btn-default" data-dismiss="modal">
+      #       Don&#39;t save
+      #     </button>
+      #     <input type="submit" name="commit" value="Save" class="btn btn-primary"
+      #       disable_with="Saving&hellip;" data-disable-with="Save" />
+      #   </div>
+      def bootstrap_modal_footer_tag(*args, &block)
+        options = args.extract_options!
+        options.stringify_keys!
+
+        content_tag(:div, class: 'modal-footer') do
+          if options['readonly']
+            bootstrap_modal_button('Close')
+          elsif block_given?
+            capture(&block)
+          elsif args.first
+            bootstrap_modal_button(args.first)
+          else
+            bootstrap_modal_save_buttons
+          end
+        end
+      end
+
       # Creates a Boostrap Modal box.
       #
       # ==== Signatures
@@ -43,25 +201,22 @@ module NdrUi
         return bootstrap_modal_box(title, capture(&block), *args) if block_given?
         options = args.extract_options!
 
-        content_tag(:div, class: bootstrap_modal_classes(options)) do
-          content_tag(:div, class: 'modal-content') do
-            content_tag(:div, content_tag(:h4, title, class: 'modal-title'),
-                        class: 'modal-header') +
-              content_tag(:div, args.first, class: 'modal-body') +
-              bootstrap_modal_default_footer(options)
-          end
+        bootstrap_modal_dialog_tag(options) do
+          bootstrap_modal_header_tag(title) +
+            bootstrap_modal_body_tag(args.first) +
+            bootstrap_modal_footer_tag(options)
         end
       end
 
       def bootstrap_modal_save_buttons
-        button_tag("Don't save", class: 'btn btn-default', "data-dismiss": 'modal') +
+        bootstrap_modal_button("Don't save") +
           submit_tag('Save',
-                     class: 'btn-primary',
+                     class: 'btn btn-primary',
                      disable_with: 'Saving&hellip;'.html_safe)
       end
 
-      def bootstrap_modal_close_buttons
-        button_tag('Close', class: 'btn btn-default', "data-dismiss": 'modal')
+      def bootstrap_modal_button(label)
+        button_tag(label, class: 'btn btn-default', "data-dismiss": 'modal')
       end
 
       private
@@ -73,12 +228,6 @@ module NdrUi
         classes = %w(modal-dialog)
         classes << "modal-#{options['size']}" if MODAL_SIZES.include?(options['size'])
         classes.join(' ')
-      end
-
-      def bootstrap_modal_default_footer(options)
-        content_tag(:div, class: 'modal-footer') do
-          options[:readonly] ? bootstrap_modal_close_buttons : bootstrap_modal_save_buttons
-        end
       end
     end
   end
