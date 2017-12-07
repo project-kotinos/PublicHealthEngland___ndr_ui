@@ -11,3 +11,4 @@
 // about supported directives.
 //
 //= require ndr_ui
+//= require ndr_ui/datepicker
