@@ -102,4 +102,19 @@ class ReadonlyTest < ActionView::TestCase
     assert_select 'input[type=hidden]#post_created_at', 0
     assert_select 'p.form-control-static', 0
   end
+
+  test 'readonly label should display translated text' do
+    time = Time.current
+    post = Post.new(updated_at: time)
+
+    bootstrap_form_for post do |form|
+      @output_buffer = form.label(:updated_at)
+      assert_select 'label', text: I18n.t('activerecord.attributes.post.updated_at')
+    end
+
+    bootstrap_form_for post, readonly: true do |form|
+      @output_buffer = form.label(:updated_at)
+      assert_select 'label', text: I18n.t('activerecord.attributes.post.updated_at')
+    end
+  end
 end
