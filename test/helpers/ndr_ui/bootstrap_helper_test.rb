@@ -213,8 +213,6 @@ module NdrUi
 
     # TODO: bootstrap_form_div_start_tag
     # TODO: bootstrap_form_div_end_tag
-    # TODO: horizonal_form_container_start_tag(editing = true)
-    # TODO: horizonal_form_container_end_tag
 
     test 'bootstrap_horizontal_form_group' do
       # Test with standard columns:

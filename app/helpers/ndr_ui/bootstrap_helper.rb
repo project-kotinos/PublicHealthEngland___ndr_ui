@@ -305,8 +305,6 @@ module NdrUi
 
     # TODO: bootstrap_form_div_start_tag
     # TODO: bootstrap_form_div_end_tag
-    # TODO: horizonal_form_container_start_tag(editing = true)
-    # TODO: horizonal_form_container_end_tag
 
     # Supply optional label. Use options[:ratio] for grid split/offset.
     # The default is [2, 10], where 2 is label columns / offset, and
