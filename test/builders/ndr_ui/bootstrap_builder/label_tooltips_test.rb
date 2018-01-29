@@ -18,7 +18,7 @@ class LabelTooltipsTest < ActionView::TestCase
         form.label :created_at, 'Test'
       end
 
-    assert_select 'span.question-tooltip', text: 'Tooltip'
+    assert_select 'span.question-tooltip[title=Tooltip]'
     assert_select 'label[for=post_created_at]'
   end
 
@@ -63,7 +63,7 @@ class LabelTooltipsTest < ActionView::TestCase
         form.label :created_at, tooltip: 'Not the translated value'
       end
 
-    assert_select '.question-tooltip', text: 'Not the translated value'
+    assert_select '.question-tooltip[title="Not the translated value"]'
     assert_select 'label[for=post_created_at]'
   end
 
