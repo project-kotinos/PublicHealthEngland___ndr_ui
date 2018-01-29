@@ -20,7 +20,7 @@ class ErrorAndWarningAlertBoxesTest < ActionView::TestCase
     @output_buffer = bootstrap_form_for(post, &:error_and_warning_alert_boxes)
 
     assert_select 'div.alert', 1
-    assert_select 'div', attributes: { class: 'alert alert-warning' } do
+    assert_select 'div.alert.alert-warning' do
       assert_select 'li', text: 'Warning'
     end
   end
@@ -32,7 +32,7 @@ class ErrorAndWarningAlertBoxesTest < ActionView::TestCase
     @output_buffer = bootstrap_form_for(post, &:error_and_warning_alert_boxes)
 
     assert_select 'div.alert', 1
-    assert_select 'div', attributes: { class: 'alert alert-danger' } do
+    assert_select 'div.alert.alert-danger' do
       assert_select 'li', text: 'Error'
     end
   end
@@ -45,10 +45,10 @@ class ErrorAndWarningAlertBoxesTest < ActionView::TestCase
     @output_buffer = bootstrap_form_for(post, &:error_and_warning_alert_boxes)
 
     assert_select 'div.alert', 2
-    assert_select 'div', attributes: { class: 'alert alert-danger', text: I18n.t('errors.alertbox.base.editing') } do
+    assert_select 'div.alert.alert-danger', text: I18n.t('errors.alertbox.base.editing') do
       assert_select 'li', text: 'Error'
     end
-    assert_select 'div', attributes: { class: 'alert alert-warning', text: I18n.t('errors.alertbox.base.editing') } do
+    assert_select 'div.alert.alert-warning', text: I18n.t('errors.alertbox.base.editing') do
       assert_select 'li', text: 'Warning'
     end
   end
@@ -62,7 +62,7 @@ class ErrorAndWarningAlertBoxesTest < ActionView::TestCase
     @output_buffer = bootstrap_form_for(post, &:error_and_warning_alert_boxes)
 
     assert_select 'div.alert', 1
-    assert_select 'div', attributes: { class: 'alert alert-warning' } do
+    assert_select 'div.alert.alert-warning' do
       assert_select 'li', 3
     end
   end
@@ -77,7 +77,7 @@ class ErrorAndWarningAlertBoxesTest < ActionView::TestCase
       @output_buffer = form.error_and_warning_alert_boxes
 
       assert_select 'div.alert', 1
-      assert_select 'div', attributes: { class: 'alert alert-warning' } do
+      assert_select 'div.alert.alert-warning' do
         assert_select 'p', text: I18n.t('warnings.alertbox.base')
         assert_select 'p', text: I18n.t('warnings.alertbox.other.editing')
         assert_select 'li', 3
@@ -99,7 +99,7 @@ class ErrorAndWarningAlertBoxesTest < ActionView::TestCase
       @output_buffer = form.error_and_warning_alert_boxes
 
       assert_select 'div.alert', 1
-      assert_select 'div', attributes: { class: 'alert alert-warning' } do
+      assert_select 'div.alert.alert-warning' do
         assert_select 'p', text: I18n.t('warnings.alertbox.base')
         assert_select 'p', text: I18n.t('warnings.alertbox.other.readonly')
         assert_select 'li', 3

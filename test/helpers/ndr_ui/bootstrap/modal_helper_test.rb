@@ -6,7 +6,7 @@ module NdrUi
     class ModalHelperTest < ActionView::TestCase
       test 'bootstrap_modal_dialog_tag' do
         @output_buffer = bootstrap_modal_dialog_tag { 'Pear form' }
-        assert_select 'div.modal-dialog', attributes: { role: 'document' } do
+        assert_select 'div.modal-dialog[role=document]' do
           assert_select 'div.modal-content', 'Pear form'
         end
 
@@ -120,7 +120,7 @@ module NdrUi
               assert_select 'button',
                             attributes: { class: 'btn btn-default', "data-dismiss": 'modal' },
                             html: /Don(.*?)t save/ # assert_select behaviour changes
-              assert_select 'input', attributes: { type: 'submit', class: 'btn-primary btn' }
+              assert_select 'input.btn.btn-primary[type=submit]'
             end
           end
         end
@@ -131,10 +131,9 @@ module NdrUi
             assert_select 'div.modal-header h4', 'New Pear'
             assert_select 'div.modal-body', 'Pear form'
             assert_select 'div.modal-footer' do
-              assert_select 'button',
-                            attributes: { class: 'btn btn-default', "data-dismiss": 'modal' },
-                            html: /Don(.*?)t save/ # assert_select behaviour changes
-              assert_select 'input', attributes: { type: 'submit', class: 'btn-primary btn' }
+              # assert_select behaviour changes:
+              assert_select 'button.btn.btn-default[data-dismiss=modal]', html: /Don(.*?)t save/
+              assert_select 'input.btn.btn-primary[type=submit]'
             end
           end
         end
@@ -147,9 +146,7 @@ module NdrUi
             assert_select 'div.modal-header h4', 'New Pear'
             assert_select 'div.modal-body', 'Pear form'
             assert_select 'div.modal-footer' do
-              assert_select 'button',
-                            attributes: { class: 'btn btn-default', "data-dismiss": 'modal' },
-                            html: 'Close'
+              assert_select 'button.btn.btn-default[data-dismiss=modal]', html: 'Close'
             end
           end
         end
@@ -160,10 +157,9 @@ module NdrUi
             assert_select 'div.modal-header h4', 'New Pear'
             assert_select 'div.modal-body', 'Pear form'
             assert_select 'div.modal-footer' do
-              assert_select 'button',
-                            attributes: { class: 'btn btn-default', "data-dismiss": 'modal' },
-                            html: /Don(.*?)t save/ # assert_select behaviour changes
-              assert_select 'input', attributes: { type: 'submit', class: 'btn-primary btn' }
+              # assert_select behaviour changes:
+              assert_select 'button.btn.btn-default[data-dismiss=modal]', html: /Don(.*?)t save/
+              assert_select 'input.btn.btn-primary[type=submit]'
             end
           end
         end
