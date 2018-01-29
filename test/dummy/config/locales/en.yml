@@ -21,6 +21,14 @@
 
 en:
   hello: "Hello world"
+  errors:
+    alertbox:
+      base:
+        readonly: "Overall errors:"
+        editing: "Overall errors (with interaction):"
+      other:
+        readonly: "Specific errors:"
+        editing: "Specific errors (with interaction):"
   warnings:
     alertbox:
       base: "Overall warnings:"

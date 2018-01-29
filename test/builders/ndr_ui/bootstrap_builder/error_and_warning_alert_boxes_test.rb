@@ -45,10 +45,14 @@ class ErrorAndWarningAlertBoxesTest < ActionView::TestCase
     @output_buffer = bootstrap_form_for(post, &:error_and_warning_alert_boxes)
 
     assert_select 'div.alert', 2
-    assert_select 'div.alert.alert-danger', text: I18n.t('errors.alertbox.base.editing') do
+    assert_select 'div.alert.alert-danger',
+                  text: Regexp.new(Regexp.escape(I18n.t('errors.alertbox.base.editing'))) do
       assert_select 'li', text: 'Error'
     end
-    assert_select 'div.alert.alert-warning', text: I18n.t('errors.alertbox.base.editing') do
+
+    # For warnings, translation file provides default rather than split out for editing/readonly:
+    assert_select 'div.alert.alert-warning',
+                  text: Regexp.new(Regexp.escape(I18n.t('warnings.alertbox.base'))) do
       assert_select 'li', text: 'Warning'
     end
   end
