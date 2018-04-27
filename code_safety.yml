@@ -15,7 +15,7 @@ file safety:
   ".travis.yml":
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 38cc915ec91fca2ac36b2ea75cd709ac0fef24f8
+    safe_revision: 8dfce08bb6eb0daee6983841d6bfc3bed713a01f
   CODE_OF_CONDUCT.md:
     comments: 
     reviewed_by: timgentry
@@ -176,6 +176,10 @@ file safety:
     comments: 
     reviewed_by: josh.pencheon
     safe_revision: 943127a83d88585dea0b6b8b0a95edc9026db69c
+  gemfiles/Gemfile.rails52:
+    comments: 
+    reviewed_by: josh.pencheon
+    safe_revision: 8dfce08bb6eb0daee6983841d6bfc3bed713a01f
   lib/ndr_ui.rb:
     comments: 
     reviewed_by: timgentry
@@ -187,7 +191,7 @@ file safety:
   lib/ndr_ui/version.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: fc3630825f275257a451ac31484f97364c5e5fe0
+    safe_revision: 5fb6adf885aaa1fbf3bf565aa72c181546240a28
   lib/tasks/ndr_ui_tasks.rake:
     comments: 
     reviewed_by: timgentry
@@ -203,7 +207,7 @@ file safety:
   ndr_ui.gemspec:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: ad86edbbe4fc36d2644ae240aeff39e93f6e46d8
+    safe_revision: 8dfce08bb6eb0daee6983841d6bfc3bed713a01f
   test/builders/ndr_ui/bootstrap_builder/datepicker_test.rb:
     comments: 
     reviewed_by: josh.pencheon
@@ -314,8 +318,8 @@ file safety:
     safe_revision: bad42dce29e241c5138cf113f9bce4fba59adb3d
   test/dummy/config/application.rb:
     comments: 
-    reviewed_by: timgentry
-    safe_revision: d9f0742cca432bde7e6e2bbeed021b70656a1197
+    reviewed_by: josh.pencheon
+    safe_revision: 8dfce08bb6eb0daee6983841d6bfc3bed713a01f
   test/dummy/config/boot.rb:
     comments: 
     reviewed_by: timgentry
