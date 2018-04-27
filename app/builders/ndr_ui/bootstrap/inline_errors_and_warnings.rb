@@ -43,7 +43,7 @@ module NdrUi
       private
 
       def inline_errors_and_warnings(method)
-        HelpBlock.new(object_name, method, @template, options).render do
+        HelpBlock.new(object_name, method, @template, objectify_options(options)).render do
           ''.html_safe.tap do |buffer|
             errors = @template.safe_join(object.errors[method], @template.tag(:br))
             buffer << @template.content_tag(:span, errors, class: 'text-danger')
