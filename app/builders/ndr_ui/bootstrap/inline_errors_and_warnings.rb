@@ -45,8 +45,10 @@ module NdrUi
       def inline_errors_and_warnings(method)
         HelpBlock.new(object_name, method, @template, objectify_options(options)).render do
           ''.html_safe.tap do |buffer|
-            errors = @template.safe_join(object.errors[method], @template.tag(:br))
-            buffer << @template.content_tag(:span, errors, class: 'text-danger')
+            if object_supports_warnings?
+              errors = @template.safe_join(object.errors[method], @template.tag(:br))
+              buffer << @template.content_tag(:span, errors, class: 'text-danger')
+            end
 
             if object_supports_warnings?
               warnings = @template.safe_join(object.warnings[method], @template.tag(:br))
@@ -54,6 +56,10 @@ module NdrUi
             end
           end
         end
+      end
+
+      def object_supports_errors?
+        object.respond_to?(:errors) && object.errors.respond_to?(:[])
       end
 
       def object_supports_warnings?

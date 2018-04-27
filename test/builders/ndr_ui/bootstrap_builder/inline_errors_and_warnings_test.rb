@@ -110,4 +110,18 @@ class InlineErrorsAndWarningsTest < ActionView::TestCase
       )
     end
   end
+
+  test 'should handle basic objects' do
+    post = Post.new
+
+    expected = <<~HTML.strip
+      <input class="form-control" type="text" name="post[banner_image][url]"
+      id="post_banner_image_url" /><span class="help-block"
+      data-feedback-for="post_banner_image_url"></span>
+    HTML
+
+    bootstrap_form_for post do |form|
+      assert_dom_equal(expected, form.fields_for(:banner_image) { |sub| sub.text_field(:url) })
+    end
+  end
 end

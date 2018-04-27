@@ -6,4 +6,8 @@ class Post < ActiveRecord::Base
   def safe?
     @warnings.empty?
   end
+
+  def banner_image
+    Struct.new(:url).new
+  end
 end
