@@ -18,5 +18,10 @@ module Dummy
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    begin
+      config.active_record.sqlite3.represent_boolean_as_integer = true
+    rescue NoMethodError
+    end
   end
 end
