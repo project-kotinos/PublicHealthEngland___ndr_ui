@@ -83,7 +83,7 @@ file safety:
   app/builders/ndr_ui/bootstrap/inline_errors_and_warnings.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: c0ceb936270b8c621c7b2951c7d106d58e76c246
+    safe_revision: ad22f8d436d7bf66add24230fa31a17ccd19dc23
   app/builders/ndr_ui/bootstrap/input_group_addons.rb:
     comments: 
     reviewed_by: josh.pencheon
@@ -191,7 +191,7 @@ file safety:
   lib/ndr_ui/version.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 5fb6adf885aaa1fbf3bf565aa72c181546240a28
+    safe_revision: 3add34d48dc924605ec05db6c69b0480db12e3b7
   lib/tasks/ndr_ui_tasks.rake:
     comments: 
     reviewed_by: timgentry
