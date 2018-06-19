@@ -21,6 +21,9 @@ Rails.application.configure do
     config.serve_static_files   = true
   end
 
+  config.assets.compile = false
+  # config.assets.debug = true
+
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false

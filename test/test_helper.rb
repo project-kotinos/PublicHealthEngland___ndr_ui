@@ -21,6 +21,11 @@ if ActiveSupport::TestCase.respond_to?(:fixture_path=)
   ActiveSupport::TestCase.fixtures :all
 end
 
+# Include all capybara + poltergeist config
+require 'ndr_dev_support/integration_testing'
+
+Capybara.server = :webrick
+
 module ActiveSupport
   class TestCase
     def unsafe_string
