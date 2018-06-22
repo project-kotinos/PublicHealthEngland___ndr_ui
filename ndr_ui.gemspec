@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'pry'
-  spec.add_development_dependency 'ndr_dev_support', '~> 2.0', '>= 2.0.2'
+  spec.add_development_dependency 'ndr_dev_support', '~> 3.0'
   spec.add_development_dependency 'simplecov'
   spec.add_development_dependency 'mocha', '~> 1.1.0'
 end
