@@ -34,8 +34,8 @@ file safety:
     safe_revision: 4cb5e5212c138670ea38f3645cd04972fb8e6393
   Rakefile:
     comments: 
-    reviewed_by: timgentry
-    safe_revision: d9f0742cca432bde7e6e2bbeed021b70656a1197
+    reviewed_by: josh.pencheon
+    safe_revision: f30457db582abc8abb07d2acb3fc44bee4dffac2
   app/assets/images/ndr_ui/.keep:
     comments: 
     reviewed_by: timgentry
@@ -63,7 +63,7 @@ file safety:
   app/assets/stylesheets/ndr_ui/datepicker.scss:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: f590f4e300703349b94dd9e1c8e22be9ef0fe8e3
+    safe_revision: f30457db582abc8abb07d2acb3fc44bee4dffac2
   app/assets/stylesheets/ndr_ui/index.scss:
     comments: 
     reviewed_by: timgentry
@@ -191,7 +191,7 @@ file safety:
   lib/ndr_ui/version.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 3add34d48dc924605ec05db6c69b0480db12e3b7
+    safe_revision: d73e7e122923d3a23ad49122782bfcf03846194c
   lib/tasks/ndr_ui_tasks.rake:
     comments: 
     reviewed_by: timgentry
@@ -207,7 +207,7 @@ file safety:
   ndr_ui.gemspec:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 8dfce08bb6eb0daee6983841d6bfc3bed713a01f
+    safe_revision: f30457db582abc8abb07d2acb3fc44bee4dffac2
   test/builders/ndr_ui/bootstrap_builder/datepicker_test.rb:
     comments: 
     reviewed_by: josh.pencheon
@@ -270,8 +270,8 @@ file safety:
     safe_revision: bad42dce29e241c5138cf113f9bce4fba59adb3d
   test/dummy/app/controllers/posts_controller.rb:
     comments: 
-    reviewed_by: timgentry
-    safe_revision: e9ff3c584e33f8672680635774628093d272a104
+    reviewed_by: josh.pencheon
+    safe_revision: f30457db582abc8abb07d2acb3fc44bee4dffac2
   test/dummy/app/helpers/application_helper.rb:
     comments: 
     reviewed_by: timgentry
@@ -296,6 +296,10 @@ file safety:
     comments: 
     reviewed_by: timgentry
     safe_revision: bad42dce29e241c5138cf113f9bce4fba59adb3d
+  test/dummy/app/views/posts/index.html.erb:
+    comments: 
+    reviewed_by: josh.pencheon
+    safe_revision: f30457db582abc8abb07d2acb3fc44bee4dffac2
   test/dummy/bin/bundle:
     comments: 
     reviewed_by: timgentry
@@ -334,8 +338,8 @@ file safety:
     safe_revision: bad42dce29e241c5138cf113f9bce4fba59adb3d
   test/dummy/config/environments/test.rb:
     comments: 
-    reviewed_by: timgentry
-    safe_revision: e9ff3c584e33f8672680635774628093d272a104
+    reviewed_by: josh.pencheon
+    safe_revision: f30457db582abc8abb07d2acb3fc44bee4dffac2
   test/dummy/config/initializers/assets.rb:
     comments: 
     reviewed_by: timgentry
@@ -442,8 +446,8 @@ file safety:
     safe_revision: eb9bb72290cbd6e83ddd1af8c8300f8e7dbe8738
   test/integration/navigation_test.rb:
     comments: 
-    reviewed_by: timgentry
-    safe_revision: bad42dce29e241c5138cf113f9bce4fba59adb3d
+    reviewed_by: josh.pencheon
+    safe_revision: f30457db582abc8abb07d2acb3fc44bee4dffac2
   test/models/post_test.rb:
     comments: 
     reviewed_by: timgentry
@@ -454,8 +458,8 @@ file safety:
     safe_revision: bad42dce29e241c5138cf113f9bce4fba59adb3d
   test/test_helper.rb:
     comments: 
-    reviewed_by: timgentry
-    safe_revision: e8be2cd9d9663d243c019f8af4e3beaecfbc4fb6
+    reviewed_by: josh.pencheon
+    safe_revision: f30457db582abc8abb07d2acb3fc44bee4dffac2
   vendor/assets/bootstrap-datepicker-1.6.0-dist/css/bootstrap-datepicker.css:
     comments: 
     reviewed_by: timgentry
@@ -792,6 +796,10 @@ file safety:
     comments: 
     reviewed_by: timgentry
     safe_revision: d653496c9519ab0b65bfb2afc832f49d734918da
+  vendor/assets/bootstrap-datepicker.scss:
+    comments: 
+    reviewed_by: josh.pencheon
+    safe_revision: f30457db582abc8abb07d2acb3fc44bee4dffac2
   vendor/assets/jquery-timeago-1.5.3/jquery.timeago.js:
     comments: 
     reviewed_by: timgentry
