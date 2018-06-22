@@ -5,9 +5,10 @@ class NavigationTest < ActionDispatch::IntegrationTest
   #   assert true
   # end
 
-  test 'something' do
-    visit '/posts'
-    assert page.has_content?('Posts#index')
-    require 'pry'; binding.pry
+  test 'page loads' do
+    assert_nothing_raised do
+      visit '/posts'
+      page.raise_server_error!
+    end
   end
 end
