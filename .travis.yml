@@ -7,9 +7,9 @@ gemfile:
   - gemfiles/Gemfile.rails52
 
 rvm:
-  - 2.3.6
-  - 2.4.3
-  - 2.5.0
+  - 2.3
+  - 2.4
+  - 2.5
 
 sudo: false
 
