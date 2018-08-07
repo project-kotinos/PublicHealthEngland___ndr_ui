@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/PublicHealthEngland/ndr_ui'
   spec.license       = 'MIT'
 
-  spec.files      = Dir['{app,config,db,lib,vendor}/**/*', 'LICENSE.txt', 'Rakefile', 'README.md']
+  spec.files      = Dir['{app,config,db,lib,vendor}/**/*', 'LICENSE.txt', 'Rakefile', 'README.md'] - ['.travis.yml']
   spec.test_files = Dir['test/**/*']
 
   spec.required_ruby_version = '>= 2.2.0'
