@@ -264,17 +264,48 @@ module NdrUi
     end
 
     test 'bootstrap_details_link' do
-      actual = details_link('#')
+      actual   = details_link('#')
       expected = '<a title="Details" class="btn btn-default btn-xs" href="#">' \
                  '<span class="glyphicon glyphicon-share-alt"></span></a>'
+
       assert_dom_equal expected, actual
     end
 
+    test 'bootstrap_details_link with resource' do
+      post     = Post.create
+      actual   = details_link(post)
+      expected = '<a title="Details" class="btn btn-default btn-xs" href="/posts/%<id>d">' \
+                 '<span class="glyphicon glyphicon-share-alt"></span></a>'
+
+      assert_dom_equal format(expected, id: post.id), actual
+    end
+
+    test 'bootstrap_details_link with forbidden resource' do
+      post = Post.create
+      stubs(:can?).with(:read, post).returns(false)
+
+      assert_nil details_link(post)
+    end
+
     test 'bootstrap_edit_link' do
-      actual = edit_link('#')
+      actual   = edit_link('#')
       expected = '<a title="Edit" class="btn btn-default btn-xs" href="#">' \
                  '<span class="glyphicon glyphicon-pencil"></span></a>'
       assert_dom_equal expected, actual
+    end
+
+    test 'bootstrap_edit_link with resource' do
+      post     = Post.create
+      actual   = edit_link(post)
+      expected = '<a title="Edit" class="btn btn-default btn-xs" href="/posts/%<id>d/edit">' \
+                 '<span class="glyphicon glyphicon-pencil"></span></a>'
+      assert_dom_equal format(expected, id: post.id), actual
+    end
+
+    test 'bootstrap_edit_link with forbidden resource' do
+      post = Post.create
+      stubs(:can?).with(:edit, post).returns(false)
+      assert_nil edit_link(post)
     end
 
     test 'bootstrap_delete_link' do
@@ -283,6 +314,22 @@ module NdrUi
                  ' data-method="delete" href="#" data-confirm="Are you sure?">' \
                  '<span class="glyphicon glyphicon-trash icon-white"></span></a>'
       assert_dom_equal expected, actual
+    end
+
+    test 'bootstrap_delete_link with resource' do
+      post   = Post.create
+      actual = delete_link(post)
+      expected = '<a title="Delete" class="btn btn-xs btn-danger" rel="nofollow"' \
+                 ' data-method="delete" href="/posts/%<id>d"' \
+                 ' data-confirm="Are you sure?">' \
+                 '<span class="glyphicon glyphicon-trash icon-white"></span></a>'
+      assert_dom_equal format(expected, id: post.id), actual
+    end
+
+    test 'bootstrap_delete_link with forbidden resource' do
+      post = Post.create
+      stubs(:can?).with(:delete, post).returns(false)
+      assert_nil delete_link(post)
     end
 
     test 'bootstrap_delete_link with custom confirm' do
