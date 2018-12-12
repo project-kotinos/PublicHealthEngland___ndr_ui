@@ -280,7 +280,16 @@ module NdrUi
     test 'bootstrap_delete_link' do
       actual = delete_link('#')
       expected = '<a title="Delete" class="btn btn-xs btn-danger" rel="nofollow"' \
-                 ' data-method="delete" href="#">' \
+                 ' data-method="delete" href="#" data-confirm="Are you sure you' \
+                 ' want to delete this?">' \
+                 '<span class="glyphicon glyphicon-trash icon-white"></span></a>'
+      assert_dom_equal expected, actual
+    end
+
+    test 'bootstrap_delete_link with custom confirm' do
+      actual = delete_link('#', data: { confirm: 'Really?' })
+      expected = '<a title="Delete" class="btn btn-xs btn-danger" rel="nofollow"' \
+                 ' data-method="delete" href="#" data-confirm="Really?">' \
                  '<span class="glyphicon glyphicon-trash icon-white"></span></a>'
       assert_dom_equal expected, actual
     end
