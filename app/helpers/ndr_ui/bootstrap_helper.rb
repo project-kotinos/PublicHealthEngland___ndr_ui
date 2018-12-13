@@ -438,14 +438,11 @@ module NdrUi
     def delete_link(path, options = {})
       defaults = {
         icon: 'trash icon-white', title: 'Delete', path: path,
-        class: 'btn btn-xs btn-danger', method: :delete
+        class: 'btn btn-xs btn-danger', method: :delete,
+        'data-confirm': 'Are you sure you want to delete this?'
       }
 
-      data_attrs = options.fetch(:data, {}).reverse_merge(
-        confirm: 'Are you sure you want to delete this?'
-      )
-
-      link_to_with_icon(defaults.merge(options.merge(data: data_attrs)))
+      link_to_with_icon(defaults.merge(options))
     end
 
     # Creates a Boostrap link with icon.

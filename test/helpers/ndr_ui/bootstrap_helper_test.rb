@@ -287,7 +287,7 @@ module NdrUi
     end
 
     test 'bootstrap_delete_link with custom confirm' do
-      actual = delete_link('#', data: { confirm: 'Really?' })
+      actual = delete_link('#', 'data-confirm': 'Really?')
       expected = '<a title="Delete" class="btn btn-xs btn-danger" rel="nofollow"' \
                  ' data-method="delete" href="#" data-confirm="Really?">' \
                  '<span class="glyphicon glyphicon-trash icon-white"></span></a>'
