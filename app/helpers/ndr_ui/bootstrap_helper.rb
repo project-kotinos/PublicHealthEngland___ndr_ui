@@ -470,8 +470,8 @@ module NdrUi
 
       groups << delete_link(object)
 
-      group = [edit_link(object, options), details_link(object, options)]
-      groups << safe_join(group) if group.any?
+      main_group = [edit_link(object, options), details_link(object, options)]
+      groups << safe_join(main_group) if main_group.any?
 
       groups.compact!
       groups.map! { |group| button_group { group } }
