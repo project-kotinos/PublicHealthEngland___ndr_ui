@@ -332,6 +332,20 @@ module NdrUi
       assert_nil delete_link(post)
     end
 
+    test 'non authorisable link with non-resource is not deprecated' do
+      assert_not_deprecated { details_link('#') }
+    end
+
+    test 'authorisable link with non-resource is deprecated' do
+      stubs(can?: true)
+
+      actual   = assert_deprecated(/authorise a non-resource object/) { details_link('#') }
+      expected = '<a title="Details" class="btn btn-default btn-xs" href="#">' \
+                 '<span class="glyphicon glyphicon-share-alt"></span></a>'
+
+      assert_equal expected, actual
+    end
+
     test 'bootstrap_delete_link with custom confirm' do
       actual = delete_link('#', 'data-confirm': 'Really?')
       expected = '<a title="Delete" class="btn btn-xs btn-danger" rel="nofollow"' \

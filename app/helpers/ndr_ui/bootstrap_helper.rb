@@ -479,7 +479,15 @@ module NdrUi
     # If an authorisation provider (i.e. CanCan) exists, use it:
     def ndr_can?(action, subject, *extra_args)
       return true unless respond_to?(:can?)
-      return true unless subject.is_a?(ActiveRecord::Base)
+
+      unless subject.is_a?(ActiveRecord::Base)
+        ActiveSupport::Deprecation.warn(<<~MSG)
+          Attempting to authorise a non-resource object causes authorisation to be skipped.
+          In future, this behaviour may change; please use a resource where possible.
+        MSG
+
+        return true
+      end
 
       can?(action, subject, *extra_args)
     end
