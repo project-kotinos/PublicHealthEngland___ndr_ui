@@ -432,14 +432,14 @@ module NdrUi
     #
     #   <%= delete_link('#') %>
     #   # => <a title="Delete" class="btn btn-xs btn-danger" rel="nofollow" href="#"
-    #           data-method="delete" data-confirm="Are you sure you want to delete this?">
+    #           data-method="delete" data-confirm="Are you sure?">
     #          <span class="glyphicon glyphicon-trash icon-white"></span>
     #        </a>'
     def delete_link(path, options = {})
       defaults = {
         icon: 'trash icon-white', title: 'Delete', path: path,
         class: 'btn btn-xs btn-danger', method: :delete,
-        'data-confirm': 'Are you sure you want to delete this?'
+        'data-confirm': I18n.translate(:'ndr_ui.confirm_delete', locale: options[:locale])
       }
 
       link_to_with_icon(defaults.merge(options))
