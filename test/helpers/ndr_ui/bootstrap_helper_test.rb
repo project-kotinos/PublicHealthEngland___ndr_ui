@@ -354,6 +354,46 @@ module NdrUi
       assert_dom_equal expected, actual
     end
 
+    test 'inline_controls_for resource' do
+      post = Post.create
+
+      actual   = inline_controls_for(post)
+      expected =
+        '<div class="btn-toolbar"><div class="btn-group"><a title="Delete"' \
+        ' class="btn btn-xs btn-danger" data-confirm="Are you sure?"' \
+        ' rel="nofollow" data-method="delete" href="/posts/1">' \
+        '<span class="glyphicon glyphicon-trash icon-white"></span></a></div>' \
+        '<div class="btn-group"><a title="Edit" class="btn btn-default btn-xs"' \
+        ' href="/posts/1/edit"><span class="glyphicon glyphicon-pencil"></span></a>' \
+        '<a title="Details" class="btn btn-default btn-xs" href="/posts/1">' \
+        '<span class="glyphicon glyphicon-share-alt"></span></a></div></div>'
+
+      assert_dom_equal expected, actual
+    end
+
+    test 'inline_controls_for limited resource' do
+      post = Post.create
+
+      stubs(:can?).with(:read, post).returns(true)
+      stubs(:can?).with(:edit, post).returns(false)
+      stubs(:can?).with(:delete, post).returns(false)
+
+      actual   = inline_controls_for(post)
+      expected =
+        '<div class="btn-toolbar"><div class="btn-group">' \
+        '<a title="Details" class="btn btn-default btn-xs" href="/posts/1">' \
+        '<span class="glyphicon glyphicon-share-alt"></span></a></div></div>'
+
+      assert_dom_equal expected, actual
+    end
+
+    test 'inline_controls_for forbidden resource' do
+      post = Post.create
+      stubs(can?: false)
+
+      assert_nil inline_controls_for(post)
+    end
+
     test 'bootstrap_link_to_with_icon' do
       actual = link_to_with_icon(icon: 'trash icon-white', title: 'Delete', path: '#')
       expected = '<a title="Delete" class="btn btn-default btn-xs" href="#">' \

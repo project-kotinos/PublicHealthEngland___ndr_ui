@@ -453,6 +453,32 @@ module NdrUi
       link_to_with_icon(defaults.merge(options))
     end
 
+    # Creates a Boostrap inline menu, with show/edit/delete links.
+    # If possibly, conditionally checks permissions
+    #
+    # ==== Signatures
+    #
+    #   inline_controls_for(object, options = {})
+    #
+    # ==== Examples
+    #
+    #   # creates: [ [delete] ] [ [edit] [details] ]
+    #   <%= inline_controls_for(@post) %>
+    #
+    def inline_controls_for(object, options = {})
+      groups = []
+
+      groups << delete_link(object)
+
+      main_group = [edit_link(object, options), details_link(object, options)]
+      groups << safe_join(main_group) if main_group.any?
+
+      groups.compact!
+      groups.map! { |group| button_group { group } }
+
+      button_toolbar { safe_join(groups) } if groups.any?
+    end
+
     # Creates a Boostrap link with icon.
     #
     # ==== Signatures
