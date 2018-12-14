@@ -155,7 +155,25 @@ module NdrUi
       content_tag(:span, '', class: "glyphicon glyphicon-#{type}")
     end
 
-    # TODO: bootstrap_icon_spinner(type = :default)
+    # Creates a simple bootstrap icon spinner.
+    #
+    # ==== Signatures
+    #
+    #   bootstrap_icon_spinner(type)
+    #
+    # ==== Examples
+    # <%= bootstrap_icon_spinner(:danger) %>
+    # => <img style="width:12px;padding-bottom:2px;" src="/assets/indicator-danger.gif">
+    def bootstrap_icon_spinner(type = :default)
+      spinner = case type
+                when :danger
+                  'indicator-danger.gif'
+                else
+                  'indicator-white.gif'
+                end
+
+      image_tag(spinner, style: 'width:12px;padding-bottom:2px;', alt: spinner)
+    end
 
     # Creates a simple bootstrap tab navigation.
     #
