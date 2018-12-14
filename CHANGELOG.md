@@ -1,6 +1,6 @@
 ## [Unreleased]
-*no unreleased changes*
-
+### Changed
+* `delete_link` now adds a `data-confirm` attribute by default (#25)
 ## 1.12.2 / 2018-06-22
 ### Fixed
 * Address issue with datepicker SCSS (#22)
