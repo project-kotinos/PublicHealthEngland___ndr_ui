@@ -360,8 +360,8 @@ module NdrUi
       actual   = inline_controls_for(post)
       expected =
         '<div class="btn-toolbar"><div class="btn-group"><a title="Delete"' \
-        ' class="btn btn-xs btn-danger" data-confirm="Are you sure you want to' \
-        ' delete this?" rel="nofollow" data-method="delete" href="/posts/1">' \
+        ' class="btn btn-xs btn-danger" data-confirm="Are you sure?"' \
+        ' rel="nofollow" data-method="delete" href="/posts/1">' \
         '<span class="glyphicon glyphicon-trash icon-white"></span></a></div>' \
         '<div class="btn-group"><a title="Edit" class="btn btn-default btn-xs"' \
         ' href="/posts/1/edit"><span class="glyphicon glyphicon-pencil"></span></a>' \
