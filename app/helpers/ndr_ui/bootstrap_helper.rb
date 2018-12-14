@@ -402,6 +402,8 @@ module NdrUi
     #        </a>
     #
     def details_link(path, options = {})
+      return unless ndr_can?(:read, path)
+
       link_to_with_icon({ icon: 'share-alt', title: 'Details', path: path }.merge(options))
     end
 
@@ -419,6 +421,10 @@ module NdrUi
     #        </a>
     #
     def edit_link(path, options = {})
+      return unless ndr_can?(:edit, path)
+
+      path = edit_polymorphic_path(path) if path.is_a?(ActiveRecord::Base)
+
       link_to_with_icon({ icon: 'pencil', title: 'Edit', path: path }.merge(options))
     end
 
@@ -436,6 +442,8 @@ module NdrUi
     #          <span class="glyphicon glyphicon-trash icon-white"></span>
     #        </a>'
     def delete_link(path, options = {})
+      return unless ndr_can?(:delete, path)
+
       defaults = {
         icon: 'trash icon-white', title: 'Delete', path: path,
         class: 'btn btn-xs btn-danger', method: :delete,
@@ -465,5 +473,23 @@ module NdrUi
     end
 
     # TODO: bootstrap_will_paginate(collection = nil, options = {})
+
+    private
+
+    # If an authorisation provider (i.e. CanCan) exists, use it:
+    def ndr_can?(action, subject, *extra_args)
+      return true unless respond_to?(:can?)
+
+      unless subject.is_a?(ActiveRecord::Base)
+        ActiveSupport::Deprecation.warn(<<~MSG)
+          Attempting to authorise a non-resource object causes authorisation to be skipped.
+          In future, this behaviour may change; please use a resource where possible.
+        MSG
+
+        return true
+      end
+
+      can?(action, subject, *extra_args)
+    end
   end
 end
