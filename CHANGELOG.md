@@ -1,12 +1,10 @@
 ## [Unreleased]
-### Added
-* Added `bootstrap_icon_spinner` helper methods
-
 ### Changed
 * `delete_link` now adds a `data-confirm` attribute by default (#25)
 * `{details,edit,delete}_link` integrate with authorisation, if possible (#26)
 
 ### Added
+* Added `bootstrap_icon_spinner` helper methods
 * Add `inline_controls_for` button toolbar helper (#27)
 
 ## 1.12.2 / 2018-06-22
