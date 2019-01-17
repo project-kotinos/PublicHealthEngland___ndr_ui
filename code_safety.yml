@@ -15,7 +15,11 @@ file safety:
   ".travis.yml":
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 8dfce08bb6eb0daee6983841d6bfc3bed713a01f
+    safe_revision: f2d52455b61a71f9bcf01c26fc5b18833cffa8d5
+  CHANGELOG.md:
+    comments: 
+    reviewed_by: josh.pencheon
+    safe_revision: 8afb3d6f90afaa7caa757a084d3dfab78d5dabad
   CODE_OF_CONDUCT.md:
     comments: 
     reviewed_by: timgentry
@@ -30,8 +34,8 @@ file safety:
     safe_revision: 3114ac4f6660e540f28bd3e64f9ecc6a6635d4cb
   README.md:
     comments: 
-    reviewed_by: timgentry
-    safe_revision: 4cb5e5212c138670ea38f3645cd04972fb8e6393
+    reviewed_by: josh.pencheon
+    safe_revision: 553335ac28b2091d8ae53a97c4cab40b5670707e
   Rakefile:
     comments: 
     reviewed_by: josh.pencheon
@@ -40,6 +44,14 @@ file safety:
     comments: 
     reviewed_by: timgentry
     safe_revision: bad42dce29e241c5138cf113f9bce4fba59adb3d
+  app/assets/images/ndr_ui/indicator-danger.gif:
+    comments: 
+    reviewed_by: josh.pencheon
+    safe_revision: 6d0851201d38c3e61592c249b91f44dbfb5942aa
+  app/assets/images/ndr_ui/indicator-white.gif:
+    comments: 
+    reviewed_by: josh.pencheon
+    safe_revision: 6d0851201d38c3e61592c249b91f44dbfb5942aa
   app/assets/javascripts/ndr_ui/.keep:
     comments: 
     reviewed_by: timgentry
@@ -66,8 +78,8 @@ file safety:
     safe_revision: f30457db582abc8abb07d2acb3fc44bee4dffac2
   app/assets/stylesheets/ndr_ui/index.scss:
     comments: 
-    reviewed_by: timgentry
-    safe_revision: 66eab40e078d3760112102dfc2716fd41fdf06f6
+    reviewed_by: josh.pencheon
+    safe_revision: 1a916bd06eeae606edbef011521c55839c07dd23
   app/builders/ndr_ui/bootstrap/datepicker.rb:
     comments: 
     reviewed_by: josh.pencheon
@@ -91,7 +103,7 @@ file safety:
   app/builders/ndr_ui/bootstrap/label_tooltips.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: f896c938116c2378c188ff4870e782cd66ae61ed
+    safe_revision: 3161edbb9eb7d2464ded83ae72be5ae7248202d8
   app/builders/ndr_ui/bootstrap/readonly.rb:
     comments: 
     reviewed_by: josh.pencheon
@@ -131,7 +143,7 @@ file safety:
   app/helpers/ndr_ui/bootstrap_helper.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: fb8352f1ed7ff1a97df85fe8d044cdcb546aa0fa
+    safe_revision: 3161edbb9eb7d2464ded83ae72be5ae7248202d8
   app/helpers/ndr_ui/css_helper.rb:
     comments: 
     reviewed_by: timgentry
@@ -182,16 +194,20 @@ file safety:
     safe_revision: 8dfce08bb6eb0daee6983841d6bfc3bed713a01f
   lib/ndr_ui.rb:
     comments: 
-    reviewed_by: timgentry
-    safe_revision: 27343997e3e856dd82f8af36ad3c66e1922f0d9c
+    reviewed_by: josh.pencheon
+    safe_revision: c4191098f1ff7f0a5441839fef5ab9a04441b8db
   lib/ndr_ui/engine.rb:
     comments: 
     reviewed_by: timgentry
     safe_revision: fa1b0ea70f3012aadbb838bc28dee5fd75b40d01
+  lib/ndr_ui/locale/en.yml:
+    comments: 
+    reviewed_by: josh.pencheon
+    safe_revision: 683f9cab22b01f15037ca679d057351168ac595a
   lib/ndr_ui/version.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: d73e7e122923d3a23ad49122782bfcf03846194c
+    safe_revision: 8afb3d6f90afaa7caa757a084d3dfab78d5dabad
   lib/tasks/ndr_ui_tasks.rake:
     comments: 
     reviewed_by: timgentry
@@ -207,7 +223,7 @@ file safety:
   ndr_ui.gemspec:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: f30457db582abc8abb07d2acb3fc44bee4dffac2
+    safe_revision: f2d52455b61a71f9bcf01c26fc5b18833cffa8d5
   test/builders/ndr_ui/bootstrap_builder/datepicker_test.rb:
     comments: 
     reviewed_by: josh.pencheon
@@ -227,7 +243,7 @@ file safety:
   test/builders/ndr_ui/bootstrap_builder/label_tooltips_test.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: dfab5a982bf8a5efa79eba1ca9ce6fc948472c74
+    safe_revision: 3161edbb9eb7d2464ded83ae72be5ae7248202d8
   test/builders/ndr_ui/bootstrap_builder/readonly_test.rb:
     comments: 
     reviewed_by: josh.pencheon
@@ -435,7 +451,7 @@ file safety:
   test/helpers/ndr_ui/bootstrap_helper_test.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: fb8352f1ed7ff1a97df85fe8d044cdcb546aa0fa
+    safe_revision: 3161edbb9eb7d2464ded83ae72be5ae7248202d8
   test/helpers/ndr_ui/css_helper_test.rb:
     comments: 
     reviewed_by: timgentry
