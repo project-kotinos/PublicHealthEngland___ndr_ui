@@ -1,4 +1,7 @@
 ## [Unreleased]
+*no unreleased changes*
+
+## 2.0.0 / 2019-01-17
 ### Changed
 * for input fields with `input-addons`, remove background and border when the form is read-only. (#24)
 * `delete_link` now adds a `data-confirm` attribute by default (#25)
