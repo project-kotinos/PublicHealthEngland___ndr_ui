@@ -1,13 +1,16 @@
 ## [Unreleased]
 ### Changed
-* `form_with` can use `NdrUi::BootstrapBuilder` as builder, also added `bootstrap_form_with` helper method as shortcut (#32)
 * for input fields with `input-addons`, remove background and border when the form is read-only. (#24)
 * `delete_link` now adds a `data-confirm` attribute by default (#25)
 * `{details,edit,delete}_link` integrate with authorisation, if possible (#26)
 
 ### Added
+* `form_with` can use `NdrUi::BootstrapBuilder` as builder, also added `bootstrap_form_with` helper method as shortcut (#32)
 * Added `bootstrap_icon_spinner` helper methods
 * Add `inline_controls_for` button toolbar helper (#27)
+
+### Fixed
+* Support Ruby 2.6. Ruby 2.4 / Rails 5.1 is now the minimum requirement.
 
 ## 1.12.2 / 2018-06-22
 ### Fixed

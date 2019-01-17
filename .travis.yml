@@ -1,13 +1,11 @@
 language: ruby
 gemfile:
-- gemfiles/Gemfile.rails42
-- gemfiles/Gemfile.rails50
 - gemfiles/Gemfile.rails51
 - gemfiles/Gemfile.rails52
 rvm:
-- 2.3
 - 2.4
 - 2.5
+- 2.6
 sudo: false
 cache: bundler
 before_script: bundle update

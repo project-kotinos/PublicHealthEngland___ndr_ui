@@ -16,9 +16,9 @@ Gem::Specification.new do |spec|
   spec.files      = Dir['{app,config,db,lib,vendor}/**/*', 'LICENSE.txt', 'Rakefile', 'README.md'] - ['.travis.yml']
   spec.test_files = Dir['test/**/*']
 
-  spec.required_ruby_version = '>= 2.2.0'
+  spec.required_ruby_version = '>= 2.4.0'
 
-  spec.add_dependency 'rails', '>= 4.2', '< 6.0'
+  spec.add_dependency 'rails', '>= 5.1', '< 6.0'
   spec.add_dependency 'bootstrap-sass', '~> 3.3.6'
   spec.add_dependency 'sass-rails', '>= 3.2'
   spec.add_dependency 'jquery-rails', '>= 4.1.0'
