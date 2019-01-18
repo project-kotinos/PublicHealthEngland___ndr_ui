@@ -19,7 +19,7 @@ file safety:
   CHANGELOG.md:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 8afb3d6f90afaa7caa757a084d3dfab78d5dabad
+    safe_revision: f9732e06d73561fdc3ac23dfbbca3695bd807a7f
   CODE_OF_CONDUCT.md:
     comments: 
     reviewed_by: timgentry
@@ -207,7 +207,7 @@ file safety:
   lib/ndr_ui/version.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 8afb3d6f90afaa7caa757a084d3dfab78d5dabad
+    safe_revision: f9732e06d73561fdc3ac23dfbbca3695bd807a7f
   lib/tasks/ndr_ui_tasks.rake:
     comments: 
     reviewed_by: timgentry
@@ -223,7 +223,7 @@ file safety:
   ndr_ui.gemspec:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: f2d52455b61a71f9bcf01c26fc5b18833cffa8d5
+    safe_revision: c2f045ff5258cee489fbc5909d4025313eee97b4
   test/builders/ndr_ui/bootstrap_builder/datepicker_test.rb:
     comments: 
     reviewed_by: josh.pencheon
