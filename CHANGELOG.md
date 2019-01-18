@@ -1,6 +1,10 @@
 ## [Unreleased]
 *no unreleased changes*
 
+## 2.0.1 / 2019-01-18
+### Fixed
+* Repacked gem without tests
+
 ## 2.0.0 / 2019-01-17
 ### Changed
 * for input fields with `input-addons`, remove background and border when the form is read-only. (#24)
