@@ -2,6 +2,11 @@
 $LOAD_PATH.push File.expand_path('../lib', __FILE__)
 require 'ndr_ui/version'
 
+unless Gem::Version.new(Gem::VERSION) >= Gem::Version.new('3.0.2')
+  # See https://github.com/rubygems/rubygems/pull/2516 for details
+  raise 'Please update RubyGems to at least 3.0.2 - lower versions build a broken ndr_ui.gem!'
+end
+
 Gem::Specification.new do |spec|
   spec.name          = 'ndr_ui'
   spec.version       = NdrUi::VERSION
