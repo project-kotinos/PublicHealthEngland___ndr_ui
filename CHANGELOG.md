@@ -1,6 +1,10 @@
 ## [Unreleased]
 *no unreleased changes*
 
+## 2.0.2 / 2019-01-18
+### Fixed
+* Ensure that RubyGems doesn't re-write symlinked asset wrongly
+
 ## 2.0.1 / 2019-01-18
 ### Fixed
 * Repacked gem without tests
