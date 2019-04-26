@@ -1,6 +1,10 @@
 ## [Unreleased]
 *no unreleased changes*
 
+## 2.1.0 / 2019-04-26
+### Added
+* Bump bootstrap-sass in response to CVE-2016-10735 and CVE-2019-8331
+
 ## 2.0.2 / 2019-01-18
 ### Fixed
 * Ensure that RubyGems doesn't re-write symlinked asset wrongly
