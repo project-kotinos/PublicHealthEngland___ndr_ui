@@ -15,11 +15,11 @@ file safety:
   ".travis.yml":
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: cec237973fbcb9d9d866b9f040ea0b90bc6550e8
+    safe_revision: 685c8b688df65a0b3359825d9e911cded8f9e323
   CHANGELOG.md:
     comments: 
-    reviewed_by: timgentry
-    safe_revision: 9aaeaad421345e4dd83de755a449704a094be6e9
+    reviewed_by: josh.pencheon
+    safe_revision: 6563e8af7ca6c565b52194c790dfb5bb2a883575
   CODE_OF_CONDUCT.md:
     comments: 
     reviewed_by: timgentry
@@ -176,22 +176,14 @@ file safety:
     comments: 
     reviewed_by: timgentry
     safe_revision: bad42dce29e241c5138cf113f9bce4fba59adb3d
-  gemfiles/Gemfile.rails42:
-    comments: 
-    reviewed_by: timgentry
-    safe_revision: 9aaffda802babfd630c6f3f346b74b76a9d886de
-  gemfiles/Gemfile.rails50:
-    comments: 
-    reviewed_by: timgentry
-    safe_revision: 9aaffda802babfd630c6f3f346b74b76a9d886de
-  gemfiles/Gemfile.rails51:
-    comments: 
-    reviewed_by: josh.pencheon
-    safe_revision: 943127a83d88585dea0b6b8b0a95edc9026db69c
   gemfiles/Gemfile.rails52:
     comments: 
     reviewed_by: josh.pencheon
     safe_revision: 8dfce08bb6eb0daee6983841d6bfc3bed713a01f
+  gemfiles/Gemfile.rails60:
+    comments: 
+    reviewed_by: josh.pencheon
+    safe_revision: 685c8b688df65a0b3359825d9e911cded8f9e323
   lib/ndr_ui.rb:
     comments: 
     reviewed_by: josh.pencheon
@@ -206,8 +198,8 @@ file safety:
     safe_revision: 683f9cab22b01f15037ca679d057351168ac595a
   lib/ndr_ui/version.rb:
     comments: 
-    reviewed_by: timgentry
-    safe_revision: 9aaeaad421345e4dd83de755a449704a094be6e9
+    reviewed_by: josh.pencheon
+    safe_revision: 6563e8af7ca6c565b52194c790dfb5bb2a883575
   lib/tasks/ndr_ui_tasks.rake:
     comments: 
     reviewed_by: timgentry
@@ -222,8 +214,8 @@ file safety:
     safe_revision: c3e08fd52d30f1fcc2604a3bc553dcdb9d254c2a
   ndr_ui.gemspec:
     comments: 
-    reviewed_by: timgentry
-    safe_revision: ca854348b4aef03263b5d5676a0cae8adb6ab93f
+    reviewed_by: josh.pencheon
+    safe_revision: 685c8b688df65a0b3359825d9e911cded8f9e323
   test/builders/ndr_ui/bootstrap_builder/datepicker_test.rb:
     comments: 
     reviewed_by: josh.pencheon
@@ -339,7 +331,7 @@ file safety:
   test/dummy/config/application.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 8dfce08bb6eb0daee6983841d6bfc3bed713a01f
+    safe_revision: 685c8b688df65a0b3359825d9e911cded8f9e323
   test/dummy/config/boot.rb:
     comments: 
     reviewed_by: timgentry
