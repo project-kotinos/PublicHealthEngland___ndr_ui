@@ -1,6 +1,10 @@
 ## [Unreleased]
 *no unreleased changes*
 
+## 2.1.1 / 2019-05-16
+### Fixed
+* Ensure Rails 6.0.0rc1 is supported.
+
 ## 2.1.0 / 2019-04-26
 ### Added
 * Bump bootstrap-sass in response to CVE-2016-10735 and CVE-2019-8331
