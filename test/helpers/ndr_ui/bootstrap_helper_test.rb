@@ -354,6 +354,7 @@ module NdrUi
       stubs(:can?).with(:read, post).returns(false)
 
       assert_nil details_link(post)
+      refute_nil details_link(post, skip_authorization: true)
     end
 
     test 'bootstrap_edit_link' do
@@ -374,7 +375,9 @@ module NdrUi
     test 'bootstrap_edit_link with forbidden resource' do
       post = Post.create
       stubs(:can?).with(:edit, post).returns(false)
+
       assert_nil edit_link(post)
+      refute_nil edit_link(post, skip_authorization: true)
     end
 
     test 'bootstrap_delete_link' do
@@ -398,7 +401,9 @@ module NdrUi
     test 'bootstrap_delete_link with forbidden resource' do
       post = Post.create
       stubs(:can?).with(:delete, post).returns(false)
+
       assert_nil delete_link(post)
+      refute_nil delete_link(post, skip_authorization: true)
     end
 
     test 'non authorisable link with non-resource is not deprecated' do
