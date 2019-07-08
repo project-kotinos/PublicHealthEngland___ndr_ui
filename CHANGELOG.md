@@ -1,6 +1,10 @@
 ## [Unreleased]
 *no unreleased changes*
 
+## 2.2.0 / 2019-05-16
+### Added
+* Allow `edit_link` and friends to optionally `skip_authorization: true`, if the UI is handling this differently.
+
 ## 2.1.1 / 2019-05-16
 ### Fixed
 * Ensure Rails 6.0.0rc1 is supported.
