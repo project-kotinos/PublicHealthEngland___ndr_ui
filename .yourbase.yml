@@ -23,4 +23,4 @@ ci:
     name: 2.6_Gemfile.rails60
 dependencies:
   build:
-  - ruby:2.6
+  - ruby:2.6.3
